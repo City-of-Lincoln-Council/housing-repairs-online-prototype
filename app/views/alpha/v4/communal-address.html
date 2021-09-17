@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/alpha/v4/private-or-communal-area">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Where is the problem located?</h1>
+
+      <form class="form" action="/alpha/v4/communal-address-list" method="post">
+
+        <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Enter the postcode or first line of the address
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" {{ data['address-postcode'] }}>
+  </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v2/repair-location">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v2/repair-description" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-location-kitchen",
+      name: "repair-location-kitchen",
+      fieldset: {
+        legend: {
+          text: "What is the problem?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "Heating",
+          text: "Heating or hot water",
+          id: "repair-location-kitchen-heating",
+          checked: checked("repair-location-kitchen", "Heating"),
+          hint: {
+            text: "Gas boilers, gas fires, radiators, storage heaters"
+          }
+        },
+        {
+          value: "Plumbing",
+          text: "Plumbing",
+          id: "repair-location-kitchen-drip",
+          checked: checked("repair-location-kitchen", "Plumbing"),
+          hint: {
+            text: "Drips or leaks, showers, toilers, sinks and taps"
+          }
+        },
+        {
+          value: "Cupboards",
+          text: "Cupboards and built-in furniture",
+          id: "repair-location-kitchen-cupboards",
+          checked: checked("repair-location-kitchen", "Cupboards"),
+          hint: {
+            text: "Kitchen units, airing cupboards"
+          }
+        },
+        {
+          value: "Electrical",
+          text: "Electrical",
+          id: "repair-location-kitchen-electrical",
+          checked: checked("repair-location-kitchen", "Electrical"),
+          hint: {
+            text: "Lights, sockets, extractor fans, smoke alarms"
+          }
+        },
+                    
+        {
+          value: "Walls, floors and ceilings",
+          text: "Walls, floors and ceilings",
+          id: "repair-location-kitchen-sink",
+          checked: checked("repair-location-kitchen", "Walls, floors and ceilings"),
+          hint: {
+            text: "Plaster, floor covering, floorboards, tiles, handrails"
+          }
+        },
+
+        {
+          value: "Something else",
+          text: "Something else",
+          id: "repair-location-kitchen-something-sel",
+          checked: checked("repair-location-kitchen", "Something else")
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+
+
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-panel govuk-panel--side">
+   <h4 class="govuk-heading-s">Address</h4>
+
+        <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+
+      
+        <p><a href="postcode">
+              Change
+        <span class="govuk-visually-hidden"> postcode</span>
+        </a><p>
+
+         <hr>
+        <h4 class="govuk-heading-s">Repair details</h4>
+
+        <p>Location: {{ data["repair-location"] }}</p>
+              <p><a href="/repair-location">
+              Change
+        <span class="govuk-visually-hidden"> location</span>
+        </a><p>
+      
+      </div>
+    </div>
+
+</div>
+
+{% endblock %}
