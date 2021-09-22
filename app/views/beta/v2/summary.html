@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/beta/v1/contact-details">Back</a>
+  <a class="govuk-back-link" href="/beta/v2/contact-details">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -28,7 +28,7 @@
             {{ data['addresses']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1//postcode">
+            <a href="/beta/v2/postcode">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -44,7 +44,7 @@
 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/contact-details">
+            <a href="/beta/v2/contact-details">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -60,7 +60,7 @@
             {{ data['telephone-number']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/contact-details-appointment">
+            <a href="/beta/v2/contact-details-appointment">
               Change
               <span class="govuk-visually-hidden"> phone information</span>
             </a>
@@ -79,7 +79,7 @@
             {{ data['repair-location']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/repair-location">
+            <a href="/beta/v2/repair-location">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -94,7 +94,7 @@
             {{ data['repair-description']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/repair-type">
+            <a href="/beta/v2/repair-type">
               Change
               <span class="govuk-visually-hidden"> contact information</span>
             </a>
@@ -108,7 +108,7 @@
             {{data['more-detail']}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/repair-description">
+            <a href="/beta/v2/repair-description">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -129,7 +129,7 @@
             <p>{{data['availability-time']}}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/repair-availability">
+            <a href="/beta/v2/repair-availability">
               Change
               <span class="govuk-visually-hidden"> date information</span>
             </a>
@@ -145,7 +145,7 @@
 
             </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/beta/v1/personal-details">
+            <a href="/beta/v2/personal-details">
               Change
               <span class="govuk-visually-hidden"> contact details</span>
             </a>
@@ -155,7 +155,7 @@
 
 
 
-         <form action="/beta/v1/confirmation" method="post" novalidate>
+         <form action="/beta/v2/confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 

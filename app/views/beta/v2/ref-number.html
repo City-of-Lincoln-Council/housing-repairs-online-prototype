@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Contact details
+  Reference number
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/beta/v1/">Back</a>
+  <a class="govuk-back-link" href="/beta/v2/address">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,32 +13,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/beta/v1/communal-or-private-property-answer" method="post">
+      <form class="form" method="post">
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  idPrefix: "communal",
-  name: "communal",
+  idPrefix: "ref-number",
+  name: "ref-number",
   fieldset: {
     legend: {
-      text: "Is the repair in a communal area?",
+      text: "Do you have a reference number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes",
-      id: "communal-yes",
-      checked: checked("communal", "yes")
+      id: "ref-number-yes",
+      checked: checked("ref-number", "Yes")
     },
     {
-      value: "no",
+      value: "No",
       text: "No",
-      id: "communal-no",
-      checked: checked("communal", "no")
+      id: "ref-number-no",
+      checked: checked("ref-number", "No")
     }
   ]
 }) }}
@@ -46,8 +46,8 @@
         {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {{ govukDetails({
-  summaryText: "Which areas are communal?",
-  text: "Communal areas are any spaces that are shared with other residents. For example, this might include gardens, lifts, corridors, or car parks."
+  summaryText: "Where to find your reference number",
+  text: "An 8 digit reference number was provided when the repair was requested online. Depending on the contact details that were submitted, this will have been sent as an email or SMS text message."
 }) }}
 
 
