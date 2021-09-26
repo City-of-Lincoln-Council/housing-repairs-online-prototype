@@ -356,20 +356,179 @@ router.post("/beta/v1/communal-or-private-property-answer", function(req, res) {
 
 // BETA VERSION 2
 
-router.post("/beta/v2/emergency", function(req, res) {
-  if (req.session.data["emergency"] === "yes") {
+router.post('/beta/v2/priority-list', function (req, res) {
+    var repairEmergency = req.session.data['repair-emergency'];
+    switch (repairEmergency) {
+        case undefined:
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "gas":
+            res.redirect('/beta/v2/smell-gas');
+            break;
+            case "heating":
+            res.redirect('/beta/v2/no-heating');
+            break;
+            case "water":
+            res.redirect('/beta/v2/no-water');
+            break;
+            case "electricity":
+            res.redirect('/beta/v2/no-electricity');
+            break;
+            case "leak":
+            res.redirect('/beta/v2/not-eligible-leak');
+            break;
+            case "security":
+            res.redirect('/beta/v2/not-eligible-security');
+            break;
+            case "wiring":
+            res.redirect('/beta/v2/not-eligible-wiring');
+            break;
+            case "carbon-onoxide":
+            res.redirect('/beta/v2/not-eligible-carbon-onoxide');
+            break;
+            case "something-else":
+            res.redirect('/beta/v2/repair-location');
+            break;
+    };
+});
+
+router.post('/beta/v2/repair-location', function (req, res) {
+    var repairLocation = req.session.data['repair-location'];
+    switch (repairLocation) {
+        case undefined:
+            res.redirect('/beta/v2/repair-kitchen');
+            break;
+            case "kitchen":
+            res.redirect('/beta/v2/repair-kitchen');
+            break;
+            case "bathroom":
+            res.redirect('/beta/v2/repair-bathroom');
+            break;
+            case "bedroom":
+            res.redirect('/beta/v2/repair-bedroom');
+            break;
+            case "living-areas":
+            res.redirect('/beta/v2/repair-living-areas');
+            break;
+            case "outside":
+            res.redirect('/beta/v2/repair-outside');
+            break;
+            case "somewhere-else":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
+});
+
+router.post('/beta/v2/repair-kitchen', function (req, res) {
+    var repairKitchen = req.session.data['repair-location-kitchen'];
+    switch (repairKitchen) {
+        case undefined:
+            res.redirect('/beta/v2/repair-');
+            break;
+            case "cupboards":
+            res.redirect('/beta/v2/repair-cupboards');
+            break;
+            case "worktop":
+            res.redirect('/beta/v2/repair-worktop');
+            break;
+            case "damp-or-mould":
+            res.redirect('/beta/v2/repair-damp-or-mould');
+            break;
+            case "electrical":
+            res.redirect('/beta/v2/repair-electrical');
+            break;
+            case "heating":
+            res.redirect('/beta/v2/repair-heating');
+            break;
+            case "sink":
+            res.redirect('/beta/v2/repair-sink');
+            break;
+            case "walls":
+            res.redirect('/beta/v2/repair-walls');
+            break;
+            case "window":
+            res.redirect('/beta/v2/repair-window');
+            break;
+            case "door":
+            res.redirect('/beta/v2/repair-door');
+            break;
+    };
+});
+
+router.post('/beta/v2/repair-bathroom', function (req, res) {
+    var repairBathroom = req.session.data['repair-location-bathroom'];
+    switch (repairBathroom) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "bath":
+            res.redirect('/beta/v2/repair-bath');
+            break;
+            case "shower":
+            res.redirect('/beta/v2/repair-shower');
+            break;
+            case "sink":
+            res.redirect('/beta/v2/repair-sink-bathroom');
+            break;
+            case "toilet":
+            res.redirect('/beta/v2/repair-toilet');
+            break;
+            case "toilet-seat":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "door":
+            res.redirect('/beta/v2/repair-door-bathroom');
+            break;
+            case "lighting":
+            res.redirect('/beta/v2/repair-lighting-bathroom');
+            break;
+            case "walls-floor-ceiling":
+            res.redirect('/beta/v2/repair-wall-bathroom');
+            break;
+            case "window":
+            res.redirect('/beta/v2/repair-window-bathroom');
+            break;
+            case "radiator":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
+});
+
+router.post("/beta/v2/repair-damp-or-mould", function(req, res) {
+  if (req.session.data["repair-damp-or-mould"] === "yes") {
     res.redirect("/beta/v2/not-eligible");
   } else {
-    res.redirect("/beta/v2/resident-type")
+    res.redirect("/beta/v2/repair-description")
   }
 });
 
-router.post("/beta/v2/resident-type", function(req, res) {
-  if (req.session.data["resident"] === "tenant") {
-    res.redirect("/beta/v2/communal-or-private-property");
+router.post("/beta/v2/repair-walls", function(req, res) {
+  if (req.session.data["repair-type-walls"] === "leak-from-above") {
+    res.redirect("/beta/v2/not-eligible");
   } else {
-    res.redirect("/beta/v2/not-eligible")
+    res.redirect("/beta/v2/repair-description")
   }
+});
+
+router.post('/beta/v2/repair-window', function (req, res) {
+    var repairWindow = req.session.data['repair-type-window'];
+    switch (repairWindow) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "broken-glass":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "downstairs-open":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "upstairs-open":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "condensation":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
 });
 
 router.post("/beta/v2/communal-or-private-property", function(req, res) {

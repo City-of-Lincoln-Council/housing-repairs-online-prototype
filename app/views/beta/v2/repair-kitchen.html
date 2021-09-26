@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/beta/v2/repair-description" method="post">
+      <form class="form" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -29,84 +29,66 @@
       },
       items: [
         {
-          value: "Cupboards",
-          text: "Cupboards or worktop",
+          value: "cupboards",
+          text: "Cupboards",
           id: "repair-location-kitchen-cupboards",
           checked: checked("repair-location-kitchen", "Cupboards")
         },
         {
-          value: "Damp or mould",
+          value: "worktop",
+          text: "Worktop",
+          id: "repair-location-kitchen-worktop",
+          checked: checked("repair-location-kitchen", "Worktop")
+        },
+        {
+          value: "damp-or-mould",
           text: "Damp or mould",
           id: "repair-location-kitchen-damp",
           checked: checked("repair-location-kitchen", "Damp or mould")
         },
         {
-          value: "Electrical",
+          value: "electrical",
           text: "Electrical",
           id: "repair-location-kitchen-electrical",
           checked: checked("repair-location-kitchen", "Electrical")
         },
                 {
-          value: "Heating",
-          text: "Heating or Hot water",
+          value: "heating",
+          text: "Heating or hot water",
           id: "repair-location-kitchen-heating",
           checked: checked("repair-location-kitchen", "Heating")
         },
                 {
-          value: "Sink",
+          value: "sink",
           text: "Sink",
           id: "repair-location-kitchen-sink",
           checked: checked("repair-location-kitchen", "Sink")
         },
-        {
-          value: "Drip",
-          text: "Drip or leak",
-          id: "repair-location-kitchen-drip",
-          checked: checked("repair-location-kitchen", "Drip")
+                {
+          value: "walls",
+          text: "Walls, floor or ceiling",
+          id: "repair-location-kitchen-walls",
+          checked: checked("repair-location-kitchen", "Walls")
+        },
+                {
+          value: "window",
+          text: "Window",
+          id: "repair-location-kitchen-window",
+          checked: checked("repair-location-kitchen", "Window")
         },
         {
-          value: "Something else",
-          text: "Something else",
-          id: "repair-location-kitchen-something-sel",
+          value: "door",
+          text: "Door",
+          id: "repair-location-kitchen-door",
           checked: checked("repair-location-kitchen", "Something else")
         }
       ]
     }) }}
 
-
-
-
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
-</div>
-
-
-
-
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-panel govuk-panel--side">
-   <h4 class="govuk-heading-s">Address</h4>
-
-        <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
-
-
-        <p><a href="postcode">
-              Change
-        <span class="govuk-visually-hidden"> postcode</span>
-        </a><p>
-
-         <hr>
-        <h4 class="govuk-heading-s">Repair details</h4>
-
-        <p>Location: {{ data["repair-location"] }}</p>
-              <p><a href="/v2/repair-location">
-              Change
-        <span class="govuk-visually-hidden"> location</span>
-        </a><p>
-
-      </div>
     </div>
 
 </div>

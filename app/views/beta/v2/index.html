@@ -34,7 +34,15 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
-          For emergency repairs call 0800 952 4444 or 020 7525 2600, available 24 hours a day, 7 days a week. You may experience longer waiting times due to a high volume of calls.
+          If you can smell gas, please call the gas emergency number on: 0800 111 999.
+        </strong>
+      </div>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          For other emergency repairs please see customer services <a href="#" target="">contact details page</a>.
         </strong>
       </div>
 
@@ -45,12 +53,11 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="govuk-body">An emergency repair is when there's <strong>immediate danger</strong> to you or the structure of the building. In an emergency we'll make the situation safe but we may need to return another day to complete the full repair.</p>
+          <p class="govuk-body">An emergency repair is when there's either a <strong>complete loss of service</strong> (e.g. water, heating or electricity) <strong>immediate danger</strong> to you or the structure of the building. In an emergency we'll make the situation safe but we may need to return another day to complete the full repair.</p>
         </div>
       </details>
 
-      <p class="govuk-body">You can use this service to request repairs to council properties.</p>
-      <p>To request a repair for a <b>communal area</b> call <strong>0800 952 4444</strong>.</p>
+      <p>To request a repair for a <b>communal area</b> please see customer services <a href="#" target="">contact details page</a>.
 
       {% from "govuk/components/details/macro.njk" import govukDetails %}
 
@@ -59,9 +66,9 @@
       text: "Communal areas are any spaces that are shared with other residents. For example, this might include gardens, lifts, corridors, or car parks."
       }) }}
 
-      <p class="govuk-body">Once you have requested a repair, we will be in touch as soon as possible.</p>
+      <p class="govuk-body">This service can only be used by <strong>council tenants</strong> to request a repair.</p>
 
-      <a href="/beta/v2/emergency" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      <a href="/beta/v2/priority-list" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
@@ -80,7 +87,12 @@
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="/beta/v2">
-                Report a repair in your property
+                Request an emergency repair
+              </a>
+            </li>
+            <li>
+              <a href="/beta/v2">
+                Leseholder repairs
               </a>
             </li>
             <li>
