@@ -13,6 +13,59 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+        </div>
+      </details>
+
       <h1 class="govuk-heading-xl">Describe your problem in more detail</h1>
 
       <p>Please describe:</p>
@@ -29,31 +82,25 @@
 
       <form class="form" action="/beta/v2/booking-an-appointment" method="post">
 
-      <div class="govuk-form-group">
-  <label class="govuk-label" for="more-detail">
+        <div class="govuk-form-group">
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint">{{data['more-detail']}}</textarea>
+        </div>
 
-  </label>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload a photo
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
 
-
-  <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint">{{data['more-detail']}}</textarea>
-</div>
-
-
-<div class="govuk-form-group">
-  <label class="govuk-label" for="file-upload-1">
-    Upload a photo
-  </label>
-  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-
-</div>
+        </div>
 
         <h3 class="govuk-heading-m">Your photo must be:</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>in colour</li>
-        <li>a jpg or jpeg file</li>
-        <li>at least 50KB and no more than 10MB</li>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>in colour</li>
+          <li>a jpg or jpeg file</li>
+          <li>at least 50KB and no more than 10MB</li>
 
-      </ul>
+        </ul>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>

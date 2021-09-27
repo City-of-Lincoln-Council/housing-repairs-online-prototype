@@ -13,12 +13,86 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Other-details: {{ data["more-detail"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Access or disabilities restrictions: {{ data["access-restrictions"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Selected appointment: {{ data["availability-time"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+        </div>
+      </details>
+
       <h1 class="govuk-heading-xl">Appointment details</h1>
 
       <form class="form" action="/beta/v2/contact-details" method="post">
 
-      <p class="govuk-body govuk-!-font-size-27"><strong>Your preferred appointment date is {{data['availability-time']}}</strong></p>
-    <p><a href="/v2/repair-availability" class="govuk-link">Change preferred appointment</a></p>
+      <p class="govuk-body govuk-!-font-size-27"><strong>Your selected appointment date is on {{data['availability-time']}}</strong></p>
+    <p><a href="/v2/repair-availability" class="govuk-link">Change selected appointment</a></p>
 
 
 

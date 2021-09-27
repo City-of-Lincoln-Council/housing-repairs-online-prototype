@@ -12,6 +12,67 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Other-details: {{ data["more-detail"] }}</p>
+                <p><a href="/beta/v2/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+        </div>
+      </details>
+
       <h1 class="govuk-heading-xl">Booking an appointment</h1>
 
       <p>Your repair will be assessed and fixed by a trade operative. If your repair is complex, it may need more than one repair appointment. If another appointment is needed, we will arrange it after the first one.</p>
