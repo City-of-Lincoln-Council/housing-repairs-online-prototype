@@ -18,8 +18,8 @@
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-      idPrefix: "repair-type-bath",
-      name: "repair-type-bath",
+      idPrefix: "repair-type-shower",
+      name: "repair-type-shower",
       fieldset: {
         legend: {
           text: "What is the problem?",
@@ -30,19 +30,31 @@
       items: [
         {
           value: "bath-taps",
-          text: "Bath taps",
+          text: "Electric",
           id: "repair-type-e-f",
           checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
         },
         {
           value: "internal-door",
-          text: "Internal door",
+          text: "Hose",
           id: "repair-type-missing-cupboards-door",
           checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
         },
         {
+          value: "tray-broken",
+          text: "Tray broken",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        },
+        {
           value: "blockage",
           text: "Blockage",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        },
+        {
+          value: "door-broken",
+          text: "Cubicle door broken",
           id: "repair-type-something-else",
           checked: checked("repair-type-cupboard-something-else", "cupboard something else")
         }

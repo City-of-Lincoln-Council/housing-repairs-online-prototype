@@ -468,7 +468,7 @@ router.post('/beta/v2/repair-bathroom', function (req, res) {
             res.redirect('/beta/v2/repair-shower');
             break;
             case "sink":
-            res.redirect('/beta/v2/repair-sink-bathroom');
+            res.redirect('/beta/v2/repair-sink');
             break;
             case "toilet":
             res.redirect('/beta/v2/repair-toilet');
@@ -480,13 +480,13 @@ router.post('/beta/v2/repair-bathroom', function (req, res) {
             res.redirect('/beta/v2/repair-door-bathroom');
             break;
             case "lighting":
-            res.redirect('/beta/v2/repair-lighting-bathroom');
+            res.redirect('/beta/v2/repair-bathroom-lighting');
             break;
             case "walls-floor-ceiling":
-            res.redirect('/beta/v2/repair-wall-bathroom');
+            res.redirect('/beta/v2/repair-bathroom-wall');
             break;
             case "window":
-            res.redirect('/beta/v2/repair-window-bathroom');
+            res.redirect('/beta/v2/repair-bathroom-window');
             break;
             case "radiator":
             res.redirect('/beta/v2/repair-description');
@@ -530,6 +530,7 @@ router.post('/beta/v2/repair-window', function (req, res) {
             break;
     };
 });
+
 
 router.post("/beta/v2/communal-or-private-property", function(req, res) {
   if (req.session.data["communal"] === "yes") {
