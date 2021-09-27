@@ -387,9 +387,25 @@ router.post('/beta/v2/priority-list', function (req, res) {
             res.redirect('/beta/v2/not-eligible-carbon-onoxide');
             break;
             case "something-else":
-            res.redirect('/beta/v2/repair-location');
+            res.redirect('/beta/v2/communal-or-private-property');
             break;
     };
+});
+
+router.post("/beta/v2/communal-or-private-property", function(req, res) {
+  if (req.session.data["communal"] === "yes") {
+    res.redirect("/beta/v2/not-eligible");
+  } else {
+    res.redirect("/beta/v2/resident-type")
+  }
+});
+
+router.post("/beta/v2/resident-type", function(req, res) {
+  if (req.session.data["resident"] === "yes") {
+    res.redirect("/beta/v2/not-eligible");
+  } else {
+    res.redirect("/beta/v2/postcode")
+  }
 });
 
 router.post('/beta/v2/repair-location', function (req, res) {
@@ -529,15 +545,6 @@ router.post('/beta/v2/repair-window', function (req, res) {
             res.redirect('/beta/v2/repair-description');
             break;
     };
-});
-
-
-router.post("/beta/v2/communal-or-private-property", function(req, res) {
-  if (req.session.data["communal"] === "yes") {
-    res.redirect("/beta/v2/not-eligible");
-  } else {
-    res.redirect("/beta/v2/postcode")
-  }
 });
 
 module.exports = router
