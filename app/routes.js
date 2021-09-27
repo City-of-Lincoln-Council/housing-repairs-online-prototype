@@ -396,7 +396,7 @@ router.post("/beta/v2/communal-or-private-property", function(req, res) {
   if (req.session.data["communal"] === "yes") {
     res.redirect("/beta/v2/not-eligible");
   } else {
-    res.redirect("/beta/v2/resident-type")
+    res.redirect("/beta/v2/postcode")
   }
 });
 
@@ -428,9 +428,6 @@ router.post('/beta/v2/repair-location', function (req, res) {
             break;
             case "outside":
             res.redirect('/beta/v2/repair-outside');
-            break;
-            case "somewhere-else":
-            res.redirect('/beta/v2/repair-description');
             break;
     };
 });
