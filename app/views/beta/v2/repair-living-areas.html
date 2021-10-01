@@ -17,108 +17,73 @@
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    {{ govukRadios({
-      idPrefix: "repair-location-kitchen",
-      name: "repair-location-kitchen",
-      fieldset: {
-        legend: {
-          text: "What is the problem?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
-        }
-      },
-      items: [
-        {
-          value: "cupboards",
-          text: "Cupboards",
-          id: "repair-location-kitchen-cupboards",
-          checked: checked("repair-location-kitchen", "Cupboards")
-        },
-        {
-          value: "worktop",
-          text: "Worktop",
-          id: "repair-location-kitchen-worktop",
-          checked: checked("repair-location-kitchen", "Worktop")
-        },
-        {
-          value: "damp-or-mould",
-          text: "Damp or mould",
-          id: "repair-location-kitchen-damp",
-          checked: checked("repair-location-kitchen", "Damp or mould")
-        },
-        {
-          value: "electrical",
-          text: "Electrical",
-          id: "repair-location-kitchen-electrical",
-          checked: checked("repair-location-kitchen", "Electrical")
-        },
-                {
-          value: "heating",
-          text: "Heating or hot water",
-          id: "repair-location-kitchen-heating",
-          checked: checked("repair-location-kitchen", "Heating")
-        },
-                {
-          value: "sink",
-          text: "Sink",
-          id: "repair-location-kitchen-sink",
-          checked: checked("repair-location-kitchen", "Sink")
-        },
-                {
-          value: "walls",
-          text: "Walls, floor or ceiling",
-          id: "repair-location-kitchen-walls",
-          checked: checked("repair-location-kitchen", "Walls")
-        },
-                {
-          value: "window",
-          text: "Window",
-          id: "repair-location-kitchen-window",
-          checked: checked("repair-location-kitchen", "Window")
-        },
-        {
-          value: "door",
-          text: "Door",
-          id: "repair-location-kitchen-door",
-          checked: checked("repair-location-kitchen", "Something else")
-        }
-      ]
-    }) }}
+        {{ govukRadios({
+          idPrefix: "repair-location-living-areas",
+          name: "repair-location-living-areas",
+          fieldset: {
+            legend: {
+              text: "What is the problem?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+          {
+            value: "door",
+            text: "Door",
+            id: "repair-location-living-areas-door",
+            checked: checked("repair-location-living-areas", "Something else")
+          },
 
-
-
+            {
+              value: "electrical",
+              text: "Electrical",
+              id: "repair-location-living-areas-electrical",
+              checked: checked("repair-location-living-areas", "Electrical")
+            },
+                    {
+              value: "heating",
+              text: "Heating or hot water",
+              id: "repair-location-living-areas-heating",
+              checked: checked("repair-location-living-areas", "Heating")
+            },
+                    {
+              value: "walls",
+              text: "Walls, floor or ceiling",
+              id: "repair-location-living-areas-walls",
+              checked: checked("repair-location-living-areas", "Walls")
+            },
+            {
+              value: "water",
+              text: "Water",
+              id: "repair-location-living-areas-window",
+              checked: checked("repair-location-living-areas", "Window")
+            },
+                    {
+              value: "window",
+              text: "Window",
+              id: "repair-location-living-areas-window",
+              checked: checked("repair-location-living-areas", "Window")
+            },
+            {
+              value: "damp-or-mould",
+              text: "Damp or mould",
+              id: "repair-location-living-areas-damp",
+              checked: checked("repair-location-living-areas", "Damp or mould")
+            },
+            {
+              value: "stairs",
+              text: "Stairs (including handrail)",
+              id: "repair-location-living-areas-door",
+              checked: checked("repair-location-living-areas", "Something else")
+            }
+          ]
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
-</div>
-
-
-
-
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-panel govuk-panel--side">
-   <h4 class="govuk-heading-s">Address</h4>
-
-        <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
-
-
-        <p><a href="postcode">
-              Change
-        <span class="govuk-visually-hidden"> postcode</span>
-        </a><p>
-
-         <hr>
-        <h4 class="govuk-heading-s">Repair details</h4>
-
-        <p>Location: {{ data["repair-location"] }}</p>
-              <p><a href="/v2/repair-location">
-              Change
-        <span class="govuk-visually-hidden"> location</span>
-        </a><p>
-
-      </div>
     </div>
 
 </div>

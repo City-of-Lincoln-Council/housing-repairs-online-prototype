@@ -544,4 +544,28 @@ router.post('/beta/v2/repair-window', function (req, res) {
     };
 });
 
+router.post('/beta/v2/repair-bedroom', function (req, res) {
+    var repairBedroom = req.session.data['repair-location-bedroom'];
+    switch (repairBedroom) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "lighting-or-sockets":
+            res.redirect('/beta/v2/repair-lighting-bedroom');
+            break;
+            case "walls":
+            res.redirect('/beta/v2/repair-walls-bedroom');
+            break;
+            case "window":
+            res.redirect('/beta/v2/repair-window');
+            break;
+            case "damp":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "radiator":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
+});
+
 module.exports = router
