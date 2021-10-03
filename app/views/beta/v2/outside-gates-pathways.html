@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" action="repair-description">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-lighting-garage",
+          name: "outside-garage",
+          fieldset: {
+            legend: {
+              text: "What is the problem?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "door",
+              text: "Front gate",
+              id: "repair-location-garage-cupboards",
+              checked: checked("repair-location-garage", "Cupboards")
+            },
+            {
+              value: "lock",
+              text: "Back gate",
+              id: "repair-location-garage-cupboards",
+              checked: checked("repair-location-garage", "Cupboards")
+            },
+            {
+              value: "broken-in",
+              text: "Concrete pathway",
+              id: "repair-location-garage-worktop",
+              checked: checked("repair-location-garage", "Worktop")
+            },
+            {
+              value: "roof",
+              text: "Concrete path around the property",
+              id: "repair-location-garage-worktop",
+              checked: checked("repair-location-garage", "Worktop")
+            },
+            {
+              value: "roof",
+              text: "Steps",
+              id: "repair-location-garage-worktop",
+              checked: checked("repair-location-garage", "Worktop")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}

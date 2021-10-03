@@ -568,4 +568,187 @@ router.post('/beta/v2/repair-bedroom', function (req, res) {
     };
 });
 
+router.post('/beta/v2/repair-living-areas', function (req, res) {
+    var repairBedroom = req.session.data['repair-location-living-areas'];
+    switch (repairBedroom) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "door":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "electrical":
+            res.redirect('/beta/v2/repair-living-areas-lighting');
+            break;
+            case "heating":
+            res.redirect('/beta/v2/repair-living-areas-heating');
+            break;
+            case "walls":
+            res.redirect('/beta/v2/repair-living-areas-walls');
+            break;
+            case "water":
+            res.redirect('/beta/v2/repair-living-areas-water');
+            break;
+            case "window":
+            res.redirect('/beta/v2/repair-living-areas-window');
+            break;
+            case "damp-or-mould":
+            res.redirect('/beta/v2/repair-living-areas-damp');
+            break;
+            case "stairs":
+            res.redirect('/beta/v2/repair-living-areas-stairs');
+            break;
+    };
+});
+
+router.post('/beta/v2/repair-living-areas-water', function (req, res) {
+    var repairLivingAreasWater = req.session.data['living-areas-water'];
+    switch (repairLivingAreasWater) {
+        case undefined:
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "damp":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "leak":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "condensation":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+
+    };
+});
+
+router.post('/beta/v2/repair-living-areas-window', function (req, res) {
+    var repairLivingAreasWindow = req.session.data['living-areas-window'];
+    switch (repairLivingAreasWindow) {
+        case undefined:
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "smashed":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "downstairs-open":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "upstairs-open":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "stuck-shut":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "condensation":
+            res.redirect('/beta/v2/repair-description');
+            break;
+
+    };
+});
+
+router.post('/beta/v2/repair-living-areas-damp', function (req, res) {
+    var repairLivingAreasDamp = req.session.data['living-areas-damp'];
+    switch (repairLivingAreasDamp) {
+        case undefined:
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "yes":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "no":
+            res.redirect('/beta/v2/repair-description');
+            break;
+
+    };
+});
+
+router.post('/beta/v2/repair-outside', function (req, res) {
+    var repairOutside = req.session.data['repair-location-outside'];
+    switch (repairOutside) {
+        case undefined:
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "doors":
+            res.redirect('/beta/v2/outside-doors');
+            break;
+            case "electrical":
+            res.redirect('/beta/v2/outside-electrical');
+            break;
+            case "garage":
+            res.redirect('/beta/v2/outside-garage');
+            break;
+            case "gates-pathways":
+            res.redirect('/beta/v2/outside-gates-pathways');
+            break;
+            case "gutters-drains":
+            res.redirect('/beta/v2/outside-gutters-drains');
+            break;
+            case "locks-fittings":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "roof":
+            res.redirect('/beta/v2/outside-roof');
+            break;
+            case "external-drainage":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "external-tap":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "fencing":
+            res.redirect('/beta/v2/outside-fencing');
+            break;
+            case "washing-lines":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "graffiti":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "fly-tipping":
+            res.redirect('/beta/v2/outside-fly-tipping');
+            break;
+            case "brickwork":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "manhole-covers":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+    };
+});
+
+router.post('/beta/v2/outside-garage', function (req, res) {
+    var repairOutsideGarage = req.session.data['outside-garage'];
+    switch (repairOutsideGarage) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "door":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "lock":
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "broken-in":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "roof":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
+});
+
+router.post('/beta/v2/outside-fly-tipping', function (req, res) {
+    var repairOutsideFlyTipping = req.session.data['outside-fly-tipping'];
+    switch (repairOutsideFlyTipping) {
+        case undefined:
+            res.redirect('/beta/v2/repair-description');
+            break;
+            case "yes":
+            res.redirect('/beta/v2/not-eligible');
+            break;
+            case "no":
+            res.redirect('/beta/v2/repair-description');
+            break;
+    };
+});
+
 module.exports = router

@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-location-outside",
+          name: "repair-location-outside",
+          fieldset: {
+            legend: {
+              text: "What is the problem?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "doors",
+              text: "Doors",
+              id: "repair-location-outside-cupboards",
+              checked: checked("repair-location-outside", "Cupboards")
+            },
+            {
+              value: "electrical",
+              text: "Electrical",
+              id: "repair-location-outside-worktop",
+              checked: checked("repair-location-outside", "Worktop")
+            },
+            {
+              value: "garage",
+              text: "Garage",
+              id: "repair-location-outside-window",
+              checked: checked("repair-location-outside", "Window")
+            },
+            {
+              value: "gates-pathways",
+              text: "Gates and pathways",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "gutters-drains",
+              text: "Gutters or drains",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "locks-fittings",
+              text: "Communal gate lock",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "roof",
+              text: "Roof",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "external-drainage",
+              text: "External drainage blocked or damaged",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "external-tap",
+              text: "Leaking external stop tap",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "fencing",
+              text: "Fencing",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "washing-lines",
+              text: "Washing lines",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "graffiti",
+              text: "Graffiti",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "fly-tipping",
+              text: "Fly tipping",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "brickwork",
+              text: "Cracked brickwork",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "manhole-covers",
+              text: "Manhole covers missing",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}
