@@ -375,16 +375,16 @@ router.post('/beta/v2/priority-list', function (req, res) {
             res.redirect('/beta/v2/no-electricity');
             break;
             case "leak":
-            res.redirect('/beta/v2/not-eligible-leak');
+            res.redirect('/beta/v2/not-eligible');
             break;
             case "security":
-            res.redirect('/beta/v2/not-eligible-security');
+            res.redirect('/beta/v2/not-eligible');
             break;
             case "wiring":
-            res.redirect('/beta/v2/not-eligible-wiring');
+            res.redirect('/beta/v2/not-eligible');
             break;
             case "carbon-onoxide":
-            res.redirect('/beta/v2/not-eligible-carbon-onoxide');
+            res.redirect('/beta/v2/not-eligible');
             break;
             case "something-else":
             res.redirect('/beta/v2/communal-or-private-property');
@@ -414,19 +414,19 @@ router.post('/beta/v2/repair-location', function (req, res) {
         case undefined:
             res.redirect('/beta/v2/repair-kitchen');
             break;
-            case "kitchen":
+            case "Kitchen":
             res.redirect('/beta/v2/repair-kitchen');
             break;
-            case "bathroom":
+            case "Bathroom":
             res.redirect('/beta/v2/repair-bathroom');
             break;
-            case "bedroom":
+            case "Bedroom":
             res.redirect('/beta/v2/repair-bedroom');
             break;
-            case "living-areas":
+            case "Living areas":
             res.redirect('/beta/v2/repair-living-areas');
             break;
-            case "outside":
+            case "Outside":
             res.redirect('/beta/v2/repair-outside');
             break;
     };
@@ -438,31 +438,31 @@ router.post('/beta/v2/repair-kitchen', function (req, res) {
         case undefined:
             res.redirect('/beta/v2/repair-');
             break;
-            case "cupboards":
+            case "Cupboards":
             res.redirect('/beta/v2/repair-cupboards');
             break;
-            case "worktop":
+            case "Damaged worktop":
             res.redirect('/beta/v2/repair-worktop');
             break;
-            case "damp-or-mould":
+            case "Damp or mould":
             res.redirect('/beta/v2/repair-damp-or-mould');
             break;
-            case "electrical":
+            case "Electrical":
             res.redirect('/beta/v2/repair-electrical');
             break;
-            case "heating":
+            case "Heating or hot water":
             res.redirect('/beta/v2/repair-heating');
             break;
-            case "sink":
+            case "Sink":
             res.redirect('/beta/v2/repair-sink');
             break;
-            case "walls":
+            case "Walls, floor or ceiling":
             res.redirect('/beta/v2/repair-walls');
             break;
-            case "window":
+            case "Window":
             res.redirect('/beta/v2/repair-window');
             break;
-            case "door":
+            case "Door":
             res.redirect('/beta/v2/repair-door');
             break;
     };

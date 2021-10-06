@@ -57,7 +57,7 @@
 
     {{ govukRadios({
       idPrefix: "repair-location-kitchen",
-      name: "repair-location-kitchen",
+      name: "repair-area",
       fieldset: {
         legend: {
           text: "What is the problem?",
@@ -67,55 +67,55 @@
       },
       items: [
         {
-          value: "cupboards",
+          value: "Cupboards",
           text: "Cupboards",
           id: "repair-location-kitchen-cupboards",
           checked: checked("repair-location-kitchen", "Cupboards")
         },
         {
-          value: "worktop",
+          value: "Damaged worktop",
           text: "Damaged worktop",
           id: "repair-location-kitchen-worktop",
           checked: checked("repair-location-kitchen", "Worktop")
         },
         {
-          value: "damp-or-mould",
+          value: "Damp or mould",
           text: "Damp or mould",
           id: "repair-location-kitchen-damp",
           checked: checked("repair-location-kitchen", "Damp or mould")
         },
         {
-          value: "electrical",
+          value: "Electrical",
           text: "Electrical",
           id: "repair-location-kitchen-electrical",
           checked: checked("repair-location-kitchen", "Electrical")
         },
                 {
-          value: "heating",
+          value: "Heating or hot water",
           text: "Heating or hot water",
           id: "repair-location-kitchen-heating",
           checked: checked("repair-location-kitchen", "Heating")
         },
                 {
-          value: "sink",
+          value: "Sink",
           text: "Sink",
           id: "repair-location-kitchen-sink",
           checked: checked("repair-location-kitchen", "Sink")
         },
                 {
-          value: "walls",
+          value: "Walls, floor or ceiling",
           text: "Walls, floor or ceiling",
           id: "repair-location-kitchen-walls",
           checked: checked("repair-location-kitchen", "Walls")
         },
                 {
-          value: "window",
+          value: "Window",
           text: "Window",
           id: "repair-location-kitchen-window",
           checked: checked("repair-location-kitchen", "Window")
         },
         {
-          value: "door",
+          value: "Door",
           text: "Door",
           id: "repair-location-kitchen-door",
           checked: checked("repair-location-kitchen", "Something else")
