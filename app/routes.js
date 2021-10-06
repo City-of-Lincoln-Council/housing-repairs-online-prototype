@@ -436,7 +436,7 @@ router.post('/beta/v2/repair-kitchen', function (req, res) {
     var repairKitchen = req.session.data['repair-location-kitchen'];
     switch (repairKitchen) {
         case undefined:
-            res.redirect('/beta/v2/repair-');
+            res.redirect('/beta/v2/repair-description');
             break;
             case "Cupboards":
             res.redirect('/beta/v2/repair-cupboards');
