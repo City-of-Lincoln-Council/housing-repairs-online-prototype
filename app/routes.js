@@ -433,7 +433,7 @@ router.post('/beta/v2/repair-location', function (req, res) {
 });
 
 router.post('/beta/v2/repair-kitchen', function (req, res) {
-    var repairKitchen = req.session.data['repair-location-kitchen'];
+    var repairKitchen = req.session.data['repair-area'];
     switch (repairKitchen) {
         case undefined:
             res.redirect('/beta/v2/repair-description');
@@ -442,7 +442,7 @@ router.post('/beta/v2/repair-kitchen', function (req, res) {
             res.redirect('/beta/v2/repair-cupboards');
             break;
             case "Damaged worktop":
-            res.redirect('/beta/v2/repair-worktop');
+            res.redirect('/beta/v2/repair-description');
             break;
             case "Damp or mould":
             res.redirect('/beta/v2/repair-damp-or-mould');
@@ -469,7 +469,7 @@ router.post('/beta/v2/repair-kitchen', function (req, res) {
 });
 
 router.post('/beta/v2/repair-bathroom', function (req, res) {
-    var repairBathroom = req.session.data['repair-location-bathroom'];
+    var repairBathroom = req.session.data['repair-area'];
     switch (repairBathroom) {
         case undefined:
             res.redirect('/beta/v2/repair-description');
@@ -545,7 +545,7 @@ router.post('/beta/v2/repair-window', function (req, res) {
 });
 
 router.post('/beta/v2/repair-bedroom', function (req, res) {
-    var repairBedroom = req.session.data['repair-location-bedroom'];
+    var repairBedroom = req.session.data['repair-area'];
     switch (repairBedroom) {
         case undefined:
             res.redirect('/beta/v2/repair-description');
@@ -569,7 +569,7 @@ router.post('/beta/v2/repair-bedroom', function (req, res) {
 });
 
 router.post('/beta/v2/repair-living-areas', function (req, res) {
-    var repairBedroom = req.session.data['repair-location-living-areas'];
+    var repairBedroom = req.session.data['repair-area'];
     switch (repairBedroom) {
         case undefined:
             res.redirect('/beta/v2/repair-description');
@@ -662,7 +662,7 @@ router.post('/beta/v2/repair-living-areas-damp', function (req, res) {
 });
 
 router.post('/beta/v2/repair-outside', function (req, res) {
-    var repairOutside = req.session.data['repair-location-outside'];
+    var repairOutside = req.session.data['repair-area'];
     switch (repairOutside) {
         case undefined:
             res.redirect('/beta/v2/not-eligible');
