@@ -383,7 +383,7 @@ router.post('/beta/v2/priority-list', function (req, res) {
             case "wiring":
             res.redirect('/beta/v2/emergency');
             break;
-            case "carbon-onoxide":
+            case "carbon-monoxide":
             res.redirect('/beta/v2/emergency');
             break;
             case "something-else":
