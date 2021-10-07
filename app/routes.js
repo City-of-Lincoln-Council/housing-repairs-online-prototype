@@ -360,31 +360,31 @@ router.post('/beta/v2/priority-list', function (req, res) {
     var repairEmergency = req.session.data['repair-emergency'];
     switch (repairEmergency) {
         case undefined:
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/emergency');
             break;
             case "gas":
             res.redirect('/beta/v2/smell-gas');
             break;
             case "heating":
-            res.redirect('/beta/v2/no-heating');
+            res.redirect('/beta/v2/emergency');
             break;
             case "water":
-            res.redirect('/beta/v2/no-water');
+            res.redirect('/beta/v2/emergency');
             break;
             case "electricity":
-            res.redirect('/beta/v2/no-electricity');
+            res.redirect('/beta/v2/emergency');
             break;
             case "leak":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/emergency');
             break;
             case "security":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/emergency');
             break;
             case "wiring":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/emergency');
             break;
             case "carbon-onoxide":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/emergency');
             break;
             case "something-else":
             res.redirect('/beta/v2/communal-or-private-property');

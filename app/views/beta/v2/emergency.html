@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Is this an emregency request?
+  Question page
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,46 +13,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Is this an emergency request?
-              </h1>
-            </legend>
-
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  What is an emergency?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body">An emergency repair is when there's <strong>immediate danger</strong> to you or the structure of the building. In an emergency we'll make the situation safe but we may need to return another day to complete the full repair.</p>
-              </div>
-            </details>
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-3" name="emergency" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-do-you-live-4" name="emergency" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
-                  No
-                </label>
-              </div>
-            </div>
-
-          </fieldset>
-        </div>
-
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
+      <h1 class="govuk-heading-xl">
+        The council may not be responsible for repairs at this property
+      </h1>
+      <h2 class="govuk-heading-m">Emergencies</h2>
+      <p class="govuk-body">An emergency is defined as something which could cause danger to someone’s health or safety or cause serious damage and destruction to property.</p>
+      <p class="govuk-body">Emergency Out of Hours Repairs - Telephone: <strong>01522 534747</strong></p>
+      <p class="govuk-body">For non-emergency requests, call <strong>01522 873333</strong></p>
+      <p>Please do not call the emergency out of hours number if the repair is not urgent. We may charge you a fee if the repair is not deemed an emergency.</p>
+      <p>If you suspect you have a gas leak, you must report it immediately to the Gas Emergency Service <strong>0800 111 999</strong> or via textphone (minicom) on <strong>0800 371 787</strong></p>
 
     </div>
   </div>
