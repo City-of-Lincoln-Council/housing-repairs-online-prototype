@@ -603,10 +603,10 @@ router.post('/beta/v2/repair-living-areas-water', function (req, res) {
             res.redirect('/beta/v2/repair-description');
             break;
             case "leak":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/not-eligible-non-emergency');
             break;
             case "condensation":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/not-eligible-non-emergency');
             break;
 
     };
@@ -631,7 +631,7 @@ router.post('/beta/v2/repair-living-areas-window', function (req, res) {
             res.redirect('/beta/v2/repair-description');
             break;
             case "condensation":
-            res.redirect('/beta/v2/repair-description');
+            res.redirect('/beta/v2/not-eligible-non-emergency');
             break;
 
     };
