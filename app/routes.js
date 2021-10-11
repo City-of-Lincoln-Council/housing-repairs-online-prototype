@@ -394,7 +394,7 @@ router.post('/beta/v2/priority-list', function (req, res) {
 
 router.post("/beta/v2/communal-or-private-property", function(req, res) {
   if (req.session.data["communal"] === "yes") {
-    res.redirect("/beta/v2/not-eligible");
+    res.redirect("/beta/v2/not-eligible-non-emergency");
   } else {
     res.redirect("/beta/v2/postcode")
   }
@@ -487,7 +487,7 @@ router.post('/beta/v2/repair-bathroom', function (req, res) {
             res.redirect('/beta/v2/repair-toilet');
             break;
             case "toilet-seat":
-            res.redirect('/beta/v2/not-eligible');
+            res.redirect('/beta/v2/not-eligible-non-emergency');
             break;
             case "door":
             res.redirect('/beta/v2/repair-door-bathroom');
@@ -509,14 +509,6 @@ router.post('/beta/v2/repair-bathroom', function (req, res) {
 
 router.post("/beta/v2/repair-damp-or-mould", function(req, res) {
   if (req.session.data["repair-damp-or-mould"] === "yes") {
-    res.redirect("/beta/v2/not-eligible");
-  } else {
-    res.redirect("/beta/v2/repair-description")
-  }
-});
-
-router.post("/beta/v2/repair-walls", function(req, res) {
-  if (req.session.data["repair-type-walls"] === "leak-from-above") {
     res.redirect("/beta/v2/not-eligible");
   } else {
     res.redirect("/beta/v2/repair-description")
