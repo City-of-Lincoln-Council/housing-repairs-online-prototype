@@ -394,7 +394,7 @@ router.post('/beta/v2/priority-list', function (req, res) {
 
 router.post("/beta/v2/communal-or-private-property", function(req, res) {
   if (req.session.data["communal"] === "yes") {
-    res.redirect("/beta/v2/not-eligible-non-emergency");
+    res.redirect("/beta/v2/not-eligible-communal-repairs");
   } else {
     res.redirect("/beta/v2/postcode")
   }
