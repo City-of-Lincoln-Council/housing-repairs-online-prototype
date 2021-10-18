@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-location-bedroom",
+          name: "repair-area",
+          fieldset: {
+            legend: {
+              text: "What is the problem?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "lighting-or-sockets",
+              text: "Lighting or sockets",
+              id: "repair-location-bedroom-cupboards",
+              checked: checked("repair-location-bedroom", "Cupboards")
+            },
+            {
+              value: "walls",
+              text: "Walls, floor or ceiling",
+              id: "repair-location-bedroom-worktop",
+              checked: checked("repair-location-bedroom", "Worktop")
+            },
+            {
+              value: "window",
+              text: "Window",
+              id: "repair-location-bedroom-window",
+              checked: checked("repair-location-bedroom", "Window")
+            },
+            {
+              value: "damp",
+              text: "Damp",
+              id: "repair-location-bedroom-door",
+              checked: checked("repair-location-bedroom", "Something else")
+            },
+            {
+              value: "radiator",
+              text: "Radiator",
+              id: "repair-location-bedroom-door",
+              checked: checked("repair-location-bedroom", "Something else")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}

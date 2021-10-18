@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-location-bathroom",
+      name: "repair-area",
+      fieldset: {
+        legend: {
+          text: "What is the problem?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "bath",
+          text: "Bath",
+          id: "repair-location-kitchen-cupboards",
+          checked: checked("repair-location-kitchen", "Cupboards")
+        },
+        {
+          value: "shower",
+          text: "Shower",
+          id: "repair-location-kitchen-worktop",
+          checked: checked("repair-location-kitchen", "Worktop")
+        },
+        {
+          value: "sink",
+          text: "Sink",
+          id: "repair-location-kitchen-damp",
+          checked: checked("repair-location-kitchen", "Damp or mould")
+        },
+        {
+          value: "toilet",
+          text: "Toilet",
+          id: "repair-location-kitchen-cupboards",
+          checked: checked("repair-location-kitchen", "Cupboards")
+        },
+        {
+          value: "toilet-seat",
+          text: "Toilet seat",
+          id: "repair-location-kitchen-damp",
+          checked: checked("repair-location-kitchen", "Damp or mould")
+        },
+        {
+          value: "door",
+          text: "Door",
+          id: "repair-location-kitchen-worktop",
+          checked: checked("repair-location-kitchen", "Worktop")
+        },
+        {
+          value: "lighting",
+          text: "Lighting",
+          id: "repair-location-kitchen-damp",
+          checked: checked("repair-location-kitchen", "Damp or mould")
+        },
+        {
+          value: "walls-floor-ceiling",
+          text: "Walls, floor or ceiling",
+          id: "repair-location-kitchen-electrical",
+          checked: checked("repair-location-kitchen", "Electrical")
+        },
+        {
+          value: "window",
+          text: "Window",
+          id: "repair-location-kitchen-worktop",
+          checked: checked("repair-location-kitchen", "Worktop")
+        },
+        {
+          value: "radiator",
+          text: "Radiator",
+          id: "repair-location-kitchen-damp",
+          checked: checked("repair-location-kitchen", "Damp or mould")
+        }
+
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

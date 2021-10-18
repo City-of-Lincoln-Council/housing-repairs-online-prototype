@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" action="/beta/v3/repair-description">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-type-worktop",
+      name: "repair-type-worktop",
+      fieldset: {
+        legend: {
+          text: "What is the worktop made of?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "worktop-wood",
+          text: "Wood",
+          id: "repair-type-worktop-wood",
+          checked: checked("repair-location-worktop-wood", "worktop-wood")
+        },
+        {
+          value: "worktop-granite",
+          text: "Granite",
+          id: "repair-type-worktop-granite",
+          checked: checked("repair-location-worktop-granite", "worktop-granite")
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

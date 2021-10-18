@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair emergencies
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+     {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-emergency",
+      name: "repair-emergency",
+      fieldset: {
+        legend: {
+          text: "What is the problem?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "gas",
+          text: "I can smell gas",
+          id: "repair-emergency-gas",
+          checked: checked("repair-emergency", "gas")
+        },
+        {
+          value: "heating",
+          text: "I have no heating",
+          id: "repair-emergency-heating",
+          checked: checked("repair-emergency", "heating")
+        },
+        {
+          value: "water",
+          text: "I have no water",
+          id: "repair-emergency-water",
+          checked: checked("repair-emergency", "water")
+        },
+        {
+          value: "electricity",
+          text: "I have no electricity",
+          id: "repair-emergency-electricity",
+          checked: checked("repair-emergency", "electricity")
+        },
+                {
+          value: "leak",
+          text: "I have water leaking on to electrics",
+          id: "repair-emergency-leak",
+          checked: checked("repair-emergency", "leak")
+        },
+                {
+          value: "security",
+          text: "I can't secure my property",
+          id: "repair-emergency-security",
+          checked: checked("repair-emergency", "security")
+        },
+        {
+          value: "wiring",
+          text: "I have exposed wiring or sockets",
+          id: "repair-emergency-wiring",
+          checked: checked("repair-emergency", "wiring")
+        },
+        {
+          value: "carbon-monoxide",
+          text: "My carbon monoxide or smoke alarm is beeping",
+          id: "repair-emergency-carbon-monoxide",
+          checked: checked("repair-emergency", "carbon-monoxide")
+        },
+        {
+          value: "something-else",
+          text: "Something else",
+          id: "repair-emergency-carbon-monoxide",
+          checked: checked("repair-emergency", "carbon-monoxide")
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

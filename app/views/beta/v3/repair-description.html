@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair description
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+
+        </div>
+      </details>
+
+      <h1 class="govuk-heading-xl">Describe your problem in more detail</h1>
+
+      <p>Please describe:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the size and location of the problem</li>
+        <li>the source of the problem</li>
+        <li>how long you have been experiencing the problem</li>
+        <li>how many items are damaged, for example 3 floor tiles</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        Please report only one problem at a time. You will have a chance to report another repair after this one.
+      </div>
+
+      <form class="form" action="/beta/v3/booking-an-appointment" method="post">
+
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+          <div class="govuk-form-group">
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="repair-description" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 200 characters
+          </div>
+
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload a photo
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+        </div>
+
+        <h3 class="govuk-heading-m">Your photo must be:</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>in colour</li>
+          <li>a jpg or jpeg file</li>
+          <li>at least 50KB and no more than 10MB</li>
+
+        </ul>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

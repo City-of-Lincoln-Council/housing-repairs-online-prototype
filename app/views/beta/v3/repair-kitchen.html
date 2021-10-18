@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a><p>
+
+        </div>
+      </details>
+
+      <form class="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-location-kitchen",
+      name: "repair-area",
+      fieldset: {
+        legend: {
+          text: "What is the problem?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "Cupboards",
+          text: "Cupboards",
+          id: "repair-location-kitchen-cupboards",
+          checked: checked("repair-location-kitchen", "Cupboards")
+        },
+        {
+          value: "Damaged worktop",
+          text: "Damaged worktop",
+          id: "repair-location-kitchen-worktop",
+          checked: checked("repair-location-kitchen", "Worktop")
+        },
+        {
+          value: "Damp or mould",
+          text: "Damp or mould",
+          id: "repair-location-kitchen-damp",
+          checked: checked("repair-location-kitchen", "Damp or mould")
+        },
+        {
+          value: "Electrical",
+          text: "Electrical",
+          id: "repair-location-kitchen-electrical",
+          checked: checked("repair-location-kitchen", "Electrical")
+        },
+                {
+          value: "Heating or hot water",
+          text: "Heating or hot water",
+          id: "repair-location-kitchen-heating",
+          checked: checked("repair-location-kitchen", "Heating")
+        },
+                {
+          value: "Sink",
+          text: "Sink",
+          id: "repair-location-kitchen-sink",
+          checked: checked("repair-location-kitchen", "Sink")
+        },
+                {
+          value: "Walls, floor or ceiling",
+          text: "Walls, floor or ceiling",
+          id: "repair-location-kitchen-walls",
+          checked: checked("repair-location-kitchen", "Walls")
+        },
+                {
+          value: "Window",
+          text: "Window",
+          id: "repair-location-kitchen-window",
+          checked: checked("repair-location-kitchen", "Window")
+        },
+        {
+          value: "Door",
+          text: "Door",
+          id: "repair-location-kitchen-door",
+          checked: checked("repair-location-kitchen", "Something else")
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

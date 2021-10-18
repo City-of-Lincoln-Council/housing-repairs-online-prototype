@@ -14,7 +14,7 @@ $(document).ready(function() { console.log({data}) });
 </script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/beta/v2/summary" method="post">
+      <form class="form" action="/beta/v3/summary" method="post">
 
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -27,13 +27,13 @@ $(document).ready(function() { console.log({data}) });
             <h4 class="govuk-heading-s">Repair details</h4>
 
             <p>Problem: Somewhere else</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
             <hr>
             <p>Communal area: No</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
@@ -47,42 +47,42 @@ $(document).ready(function() { console.log({data}) });
 
             <hr>
             <p>Location: {{ data["repair-location"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
 
             <hr>
             <p>Location: {{ data["repair-location-kitchen"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
 
             <hr>
             <p>Location: {{ data["repair-type-cupboards"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
 
             <hr>
             <p>Other-details: {{ data["more-detail"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
 
             <hr>
             <p>Access or disabilities restrictions: {{ data["access-restrictions"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>
 
             <hr>
             <p>Selected appointment: {{ data["availability-time"] }}</p>
-                  <p><a href="/beta/v2/repair-location">
+                  <p><a href="/beta/v3/repair-location">
                   Change
             <span class="govuk-visually-hidden"> location</span>
             </a></p>

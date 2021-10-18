@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> postcode</span>
+          </a></p>
+
+        </div>
+      </details>
+
+      <h1 class="govuk-heading-xl">Select an address</h1>
+
+
+      <form class="form" action="/beta/v3/repair-location" method="get">
+
+        <div class="govuk-form-group">
+
+   <div class="govuk-form-group">
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "addresses",
+  name: "addresses",
+  label: {
+    text: "Select an address"
+  },
+  items: [
+    {
+      value: "Unanswered",
+      text: "3 addresses found",
+      id: "addresses-flat-0",
+      checked: checked("addresses", "Unanswered"),
+      selected: true
+
+    },
+    {
+      value: "Flat 1, Shoreditch House",
+      text: "Flat 1, Shoreditch House",
+      id: "addresses-flat-1",
+      checked: checked("addresses", "Flat 1, Shoreditch House")
+    },
+    {
+      value: "Flat 2, Shoreditch House",
+      text: "Flat 2, Shoreditch House",
+      id: "addresses-flat-2",
+      checked: checked("addresses", "Flat 2, Shoreditch House")
+    },
+    {
+      value: "Flat 3, Shoreditch House",
+      text: "Flat 3, Shoreditch House",
+      id: "addresses-flat-3",
+      checked: checked("addresses", "Flat 3, Shoreditch House")
+    }
+  ]
+}) }}
+
+
+</div>
+
+
+  </div>
+
+  <p><a href="/beta/v3/not-eligible">I can't find my address on this list</a></p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
