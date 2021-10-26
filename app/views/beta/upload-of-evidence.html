@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload Evidence
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v11/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+  function deleteFile(i){
+	$( "#filediv"+i ).remove();
+  }
+
+  function clearFiles(id){
+	if ($('#'+id).not(':checked').length) {
+		$("#"+id+"-file").empty();
+	}
+  }
+
+ function uploadPayslips(id,spanid){
+	var fi = document.getElementById(id);
+	// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+    if (fi.files.length > 0) {
+        // THE TOTAL FILE COUNT.
+        // RUN A LOOP TO CHECK EACH SELECTED FILE.
+        for (var i = 0; i <= fi.files.length - 1; i++) {
+            var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+			var fsizename = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+			var fsize = Math.round((fsizename / 1024))+' KB';
+			// SHOW THE EXTRACTED DETAILS OF THE FILE.
+            document.getElementById(spanid).innerHTML =
+                document.getElementById(spanid).innerHTML + '<div class="govuk-summary-list__row" id="filediv'+fsizename+(i+1)+'"><dt class="govuk-summary-list__key">File '+(i+1)+'</dt> <dd class="govuk-summary-list__value"> <a download="" href="/">'+fname+'</a>,'+fsize+'</dd><dd class="govuk-summary-list__actions">  <a class="govuk-link"  onclick="deleteFile('+fsizename+(i+1)+')">	Delete<span class="govuk-visually-hidden"> file 1</span>	  </a>		</dd>	</div>';
+			}
+			$('#'+id).val('');
+	    }
+        else {
+            alert('Please select a file.')
+        }
+}
+
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload evidence
+              </h1>
+          </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">The applicant must provide payslips or a contract of employment as evidence.</span>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div id="upload-hint" class="govuk-hint">
+                Select one option.
+              </div>
+
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+        <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contract" name="contract" onclick="clearFiles('contract')" type="checkbox" value="contract" data-aria-controls="conditional-contract-2">
+        <label class="govuk-label govuk-checkboxes__label" for="contract">
+          Contract
+        </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contract-2">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group" id="conditional-contract">
+                    <label class="govuk-label" for="upload-contract">
+                      Select file(s)
+                    </label>
+          <dl class="govuk-summary-list" id="contract-file"></dl>
+                    <input class="govuk-file-upload" id="upload-contract" multiple  name="upload-contract" type="file" aria-describedby="upload-contract">
+                    <button class="govuk-button govuk-button--secondary" onClick="uploadPayslips('upload-contract','contract-file')" data-module="govuk-button">Upload</button>
+            </div>
+        </div>
+        </div>
+        <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="payslip" onclick="clearFiles('payslip')" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-payslip">
+        <label class="govuk-label govuk-checkboxes__label" for="payslip">
+          Payslips
+        </label>
+        </div>
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-payslip">
+        <div class="govuk-form-group">
+           <div class="govuk-form-group" id="conditional-payslips">
+                    <label class="govuk-label" for="upload-payslips">
+                      Select file(s)
+                    </label>
+          <dl class="govuk-summary-list" id="payslip-file"></dl>
+                    <input class="govuk-file-upload" id="upload-payslips" name="upload-payslips" type="file" multiple  aria-describedby="upload-payslips">
+                    <button class="govuk-button govuk-button--secondary" onClick="uploadPayslips('upload-payslips','payslip-file')" data-module="govuk-button">Upload</button>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        </fieldset>
+</div>
+
+      <a href="comments" class="govuk-button" data-module="govuk-button">Continue</a>
+    </div>
+  </div>
+{% endblock %}
