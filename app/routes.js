@@ -893,6 +893,9 @@ router.post('/beta/v3/repair-bathroom', function (req, res) {
             case "radiator":
             res.redirect('/beta/v3/repair-description');
             break;
+            case "something-else":
+            res.redirect('/beta/v3/repair-description');
+            break;
     };
 });
 

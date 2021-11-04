@@ -93,12 +93,9 @@ $(document).ready(function() { console.log({data}) });
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                How should we get in touch?
+                How should we confirm the appointment?
               </h1>
             </legend>
-            <div id="changed-name-hint" class="govuk-hint">
-              We will use these contact details to confirm the appointment and get in touch at the time of the appointment.
-            </div>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("how-contacted","email")}}>
@@ -115,7 +112,7 @@ $(document).ready(function() { console.log({data}) });
                 </div>
 
               </div>
-              
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("how-contacted","text")}}>
                 <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">

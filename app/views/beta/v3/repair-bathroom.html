@@ -22,7 +22,7 @@
       name: "repair-area",
       fieldset: {
         legend: {
-          text: "What is the problem?",
+          text: "What does your problem relate to?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -87,6 +87,12 @@
           text: "Radiator",
           id: "repair-location-kitchen-damp",
           checked: checked("repair-location-kitchen", "Damp or mould")
+        },
+        {
+          value: "something-else",
+          text: "Something else",
+          id: "repair-location-kitchen-something-else",
+          checked: checked("repair-location-bathroom", "Something else")
         }
 
       ]

@@ -93,25 +93,13 @@ $(document).ready(function() { console.log({data}) });
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                Who should we contact at the time of the appointment?
+                Which number should we call if we need to get in touch?
               </h1>
             </legend>
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("how-contacted","email")}}>
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                  Me
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2" {{ checked("how-contacted","phone")}}>
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                  Someone else
-                </label>
-              </div>
-
+            <div id="account-number-hint" class="govuk-hint">
+              Please enter a UK phone number
             </div>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
           </fieldset>
         </div>
 
