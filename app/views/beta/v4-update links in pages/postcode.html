@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <p>Problem: Somewhere else</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+          <hr>
+          <p>Communal area: No</p>
+                <p><a href="/beta/v3/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a></p>
+        </div>
+      </details>
+
+      <h1 class="govuk-heading-xl">What is the property address?</h1>
+
+      <form class="form" action="/beta/v3/address" method="post">
+
+        <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Postcode
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" {{ data['address-postcode'] }}>
+  </div>
+
+        <button class="govuk-button" data-module="govuk-button">Select your address</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

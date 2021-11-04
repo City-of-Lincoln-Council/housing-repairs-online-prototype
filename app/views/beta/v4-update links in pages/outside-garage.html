@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-lighting-garage",
+          name: "outside-garage",
+          fieldset: {
+            legend: {
+              text: "What is the problem?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "door",
+              text: "Door damage",
+              id: "repair-location-garage-cupboards",
+              checked: checked("repair-location-garage", "Cupboards")
+            },
+            {
+              value: "lock",
+              text: "Lock damage",
+              id: "repair-location-garage-cupboards",
+              checked: checked("repair-location-garage", "Cupboards")
+            },
+            {
+              value: "broken-in",
+              text: "Broken into",
+              id: "repair-location-garage-worktop",
+              checked: checked("repair-location-garage", "Worktop")
+            },
+            {
+              value: "roof",
+              text: "Roof issue or leak",
+              id: "repair-location-garage-worktop",
+              checked: checked("repair-location-garage", "Worktop")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}

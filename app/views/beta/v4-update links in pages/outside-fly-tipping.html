@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "outside-fly-tipping",
+          name: "outside-fly-tipping",
+          fieldset: {
+            legend: {
+              text: "Is it hazardous?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              id: "repair-location-fly-tipping",
+              checked: checked("outside-fly-tipping", "Cupboards")
+            },
+            {
+              value: "no",
+              text: "No",
+              id: "repair-location-fly-tipping",
+              checked: checked("outside-fly-tipping", "Cupboards")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}
