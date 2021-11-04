@@ -1236,7 +1236,7 @@ router.post('/beta/v3/repair-door-living-areas', function (req, res) {
     };
 });
 
-router.post('/beta/v3/repair-description', function (req, res) {
+/*router.post('/beta/v3/repair-description', function (req, res) {
   var repairDescription = ['repair-description']
 
   for (let key in req.body) {
@@ -1253,7 +1253,7 @@ router.post('/beta/v3/repair-description', function (req, res) {
     res.redirect('/beta/v3/contact-person')
   }
 
-});
+});*/
 
 
 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 //
