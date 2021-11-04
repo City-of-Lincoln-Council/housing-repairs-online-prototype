@@ -10,6 +10,40 @@
 
 {% block content %}
 
+<script>
+  function deleteFile(i){
+	$( "#filediv"+i ).remove();
+  }
+
+  function clearFiles(id){
+	if ($('#'+id).not(':checked').length) {
+		$("#"+id+"-file").empty();
+	}
+  }
+
+ function uploadPayslips(id,spanid){
+	var fi = document.getElementById(id);
+	// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+    if (fi.files.length > 0) {
+        // THE TOTAL FILE COUNT.
+        // RUN A LOOP TO CHECK EACH SELECTED FILE.
+        for (var i = 0; i <= fi.files.length - 1; i++) {
+            var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+			var fsizename = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+			var fsize = Math.round((fsizename / 1024))+' KB';
+			// SHOW THE EXTRACTED DETAILS OF THE FILE.
+            document.getElementById(spanid).innerHTML =
+                document.getElementById(spanid).innerHTML + '<div class="govuk-summary-list__row" id="filediv'+fsizename+(i+1)+'"><dt class="govuk-summary-list__key">File '+(i+1)+'</dt> <dd class="govuk-summary-list__value"> <a download="" href="/">'+fname+'</a>,'+fsize+'</dd><dd class="govuk-summary-list__actions">  <a class="govuk-link"  onclick="deleteFile('+fsizename+(i+1)+')">	Delete<span class="govuk-visually-hidden"> file 1</span>	  </a>		</dd>	</div>';
+			}
+			$('#'+id).val('');
+	    }
+        else {
+            alert('Please select a file.')
+        }
+}
+
+</script>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 

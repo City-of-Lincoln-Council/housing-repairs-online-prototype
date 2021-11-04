@@ -83,29 +83,34 @@
       <form class="form" method="post">
 
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="255">
-          <div class="govuk-form-group">
-            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="repair-description" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          <div class="govuk-form-group--error">
+            <span id="more-detail-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter more detail
+            </span>
+            <textarea style="border:2px solid #d4351c" class="govuk-textarea govuk-js-character-count govuk-textarea--error" id="with-hint" repair-description-error" rows="5" aria-describedby="with-hint-hint more-detail-error" name="repair-description-error"></textarea>
           </div>
 
           <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
             You can enter up to 255 characters
           </div>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-heading-m" for="file-upload-1">
+              Upload a photo (maximum of 3)
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
 
         </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-heading-m" for="file-upload-1">
-            Upload a photo (maximum of 3)
-          </label>
-          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
 
-        </div>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-      </form>
 
   </div>
 
-</div>
 
 {% endblock %}

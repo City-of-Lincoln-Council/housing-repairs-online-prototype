@@ -746,7 +746,43 @@ router.post('/beta/v3/priority-list', function (req, res) {
     var repairEmergency = req.session.data['repair-emergency'];
     switch (repairEmergency) {
         case undefined:
+            res.redirect('/beta/v3/priority-list-error');
+            break;
+            case "gas":
+            res.redirect('/beta/v3/smell-gas');
+            break;
+            case "heating":
             res.redirect('/beta/v3/emergency');
+            break;
+            case "water":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "electricity":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "leak":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "security":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "wiring":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "carbon-monoxide":
+            res.redirect('/beta/v3/emergency');
+            break;
+            case "something-else":
+            res.redirect('/beta/v3/communal-or-private-property');
+            break;
+    };
+});
+
+router.post('/beta/v3/priority-list-error', function (req, res) {
+    var repairEmergency = req.session.data['repair-emergency'];
+    switch (repairEmergency) {
+        case undefined:
+            res.redirect('/beta/v3/priority-list-error');
             break;
             case "gas":
             res.redirect('/beta/v3/smell-gas');
@@ -1236,25 +1272,21 @@ router.post('/beta/v3/repair-door-living-areas', function (req, res) {
     };
 });
 
-/*router.post('/beta/v3/repair-description', function (req, res) {
-  var repairDescription = ['repair-description']
-
-  for (let key in req.body) {
-    //this tests for basic "has the user entered data here"
-    if (req.body[key] === '' || req.body[key] === undefined) {
-      repairDescription.push(req.body[key])
-    }
+router.post("/beta/v3/repair-description", function(req, res) {
+  if (req.session.data["repair-description"] === "") {
+    res.redirect("/beta/v3/repair-description-error");
+  } else {
+    res.redirect("/beta/v3/contact-person")
   }
+});
 
-  if(repairDescription.length != 0) {
-    res.render('/beta/v3/repair-description-error', {errors: repairDescription})
+router.post("/beta/v3/repair-description-error", function(req, res) {
+  if (req.session.data["repair-description-error"] === "") {
+    res.redirect("/beta/v3/repair-description-error");
+  } else {
+    res.redirect("/beta/v3/contact-person")
   }
-  else {
-    res.redirect('/beta/v3/contact-person')
-  }
-
-});*/
-
+});
 
 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 // BETA VERSION 4 //
 
