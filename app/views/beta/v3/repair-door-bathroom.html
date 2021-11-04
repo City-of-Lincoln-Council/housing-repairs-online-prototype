@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" method="post" action="/beta/v3/repair-description">
+      <form class="form" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
       idPrefix: "repair-type-toilet",
-      name: "repair-type-toilet",
+      name: "repair-type-door-bathroom",
       fieldset: {
         legend: {
           text: "What is the problem?",
@@ -29,14 +29,20 @@
       },
       items: [
         {
-          value: "not-flushing",
-          text: "Sticking",
+          value: "sticking",
+          text: "Internal Door issue, including hinges, handle, sticking",
           id: "repair-type-e-f",
           checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
         },
         {
-          value: "overflowing",
+          value: "lock",
           text: "Lock on the door",
+          id: "repair-type-missing-cupboards-door",
+          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
+        },
+        {
+          value: "adjust",
+          text: "Adjusting a door after a carpet fitting",
           id: "repair-type-missing-cupboards-door",
           checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
         }

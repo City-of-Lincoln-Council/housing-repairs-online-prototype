@@ -13,13 +13,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" method="post" action="/beta/v3/repair-description">
+      <form class="form" method="post" action="repair-description">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-      idPrefix: "repair-type-wall",
-      name: "repair-type-wall",
+      idPrefix: "repair-type-cupboards",
+      name: "repair-type-walls",
       fieldset: {
         legend: {
           text: "What is the problem?",
@@ -29,44 +29,44 @@
       },
       items: [
         {
-          value: "not-flushing",
-          text: "Wet room flooring",
+          value: "tiles",
+          text: "Wall tiles",
           id: "repair-type-e-f",
           checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
         },
         {
-          value: "overflowing",
-          text: "Damp",
-          id: "repair-type-missing-cupboards-door",
-          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
-        },
-        {
-          value: "overflowing",
-          text: "Extractor fan",
-          id: "repair-type-missing-cupboards-door",
-          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
-        },
-        {
-          value: "overflowing",
-          text: "Skirting board or architrave",
-          id: "repair-type-missing-cupboards-door",
-          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
-        },
-        {
-          value: "overflowing",
-          text: "Plastering",
-          id: "repair-type-missing-cupboards-door",
-          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
-        },
-        {
-          value: "overflowing",
-          text: "Wall tiles",
-          id: "repair-type-missing-cupboards-door",
-          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
-        },
-        {
-          value: "overflowing",
+          value: "floor-tiles",
           text: "Floor tiles",
+          id: "repair-type-e-f",
+          checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
+        },
+        {
+          value: "light-fitting",
+          text: "Light fitting(s)",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        },
+        {
+          value: "skirting",
+          text: "Skirting boards or architraves",
+          id: "repair-type-e-f",
+          checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
+        },
+        {
+          value: "Plastering on the ceiling",
+          text: "Plastering on the ceiling",
+          id: "repair-type-missing-cupboards-door",
+          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
+        },
+        {
+          value: "Plastering on the walls",
+          text: "Plastering on the walls",
+          id: "repair-type-missing-cupboards-door",
+          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
+        },
+        {
+          value: "wooden floorboards",
+          text: "Wooden floorboards",
           id: "repair-type-missing-cupboards-door",
           checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
         }

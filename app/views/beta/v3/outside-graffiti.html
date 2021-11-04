@@ -18,39 +18,27 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "repair-lighting-garage",
-          name: "outside-garage",
+          idPrefix: "repair-outside-water",
+          name: "outside-graffiti",
           fieldset: {
             legend: {
-              text: "What is the problem?",
+              text: "Is it offensive?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           items: [
             {
-              value: "door",
-              text: "Door damage",
+              value: "yes",
+              text: "Yes",
               id: "repair-location-garage-cupboards",
               checked: checked("repair-location-garage", "Cupboards")
             },
             {
-              value: "lock",
-              text: "Lock damage",
+              value: "no",
+              text: "No",
               id: "repair-location-garage-cupboards",
               checked: checked("repair-location-garage", "Cupboards")
-            },
-            {
-              value: "broken-in",
-              text: "Broken into",
-              id: "repair-location-garage-worktop",
-              checked: checked("repair-location-garage", "Worktop")
-            },
-            {
-              value: "roof",
-              text: "Roof issue or leak",
-              id: "repair-location-garage-worktop",
-              checked: checked("repair-location-garage", "Worktop")
             }
           ]
         }) }}

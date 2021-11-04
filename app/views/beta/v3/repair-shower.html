@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" method="post" action="/beta/v3/repair-description">
+      <form class="form" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -29,32 +29,44 @@
       },
       items: [
         {
-          value: "bath-taps",
-          text: "Electric",
+          value: "electric",
+          text: "Electric shower unit",
           id: "repair-type-e-f",
-          checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
+          checked: checked("electric", "electric")
         },
         {
-          value: "internal-door",
-          text: "Hose",
+          value: "tap-shower",
+          text: "Tap shower",
           id: "repair-type-missing-cupboards-door",
           checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
         },
         {
-          value: "tray-broken",
-          text: "Tray broken",
+          value: "shower-hose",
+          text: "Shower hose",
           id: "repair-type-something-else",
           checked: checked("repair-type-cupboard-something-else", "cupboard something else")
         },
         {
-          value: "blockage",
-          text: "Blockage",
+          value: "shower-head",
+          text: "Shower head",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        },
+        {
+          value: "tray-broken",
+          text: "Shower tray broken",
           id: "repair-type-something-else",
           checked: checked("repair-type-cupboard-something-else", "cupboard something else")
         },
         {
           value: "door-broken",
           text: "Cubicle door broken",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        },
+        {
+          value: "blockage",
+          text: "Shower drain blocked",
           id: "repair-type-something-else",
           checked: checked("repair-type-cupboard-something-else", "cupboard something else")
         }

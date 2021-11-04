@@ -18,8 +18,8 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "repair-lighting-garage",
-          name: "outside-garage",
+          idPrefix: "repair-outside-water",
+          name: "outside-water",
           fieldset: {
             legend: {
               text: "What is the problem?",
@@ -29,28 +29,16 @@
           },
           items: [
             {
-              value: "door",
-              text: "Door damage",
+              value: "drainage",
+              text: "External drainage blocked or damaged",
               id: "repair-location-garage-cupboards",
               checked: checked("repair-location-garage", "Cupboards")
             },
             {
-              value: "lock",
-              text: "Lock damage",
+              value: "tap",
+              text: "Leaking external stop tap",
               id: "repair-location-garage-cupboards",
               checked: checked("repair-location-garage", "Cupboards")
-            },
-            {
-              value: "broken-in",
-              text: "Broken into",
-              id: "repair-location-garage-worktop",
-              checked: checked("repair-location-garage", "Worktop")
-            },
-            {
-              value: "roof",
-              text: "Roof issue or leak",
-              id: "repair-location-garage-worktop",
-              checked: checked("repair-location-garage", "Worktop")
             }
           ]
         }) }}

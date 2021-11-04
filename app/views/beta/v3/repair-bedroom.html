@@ -19,7 +19,7 @@
 
         {{ govukRadios({
           idPrefix: "repair-location-bedroom",
-          name: "repair-area",
+          name: "repair-area-bedroom",
           fieldset: {
             legend: {
               text: "What does your problem relate to?",
@@ -28,15 +28,21 @@
             }
           },
           items: [
-            {
+          {
+            value: "door",
+            text: "Door",
+            id: "repair-location-bedroom-cupboards",
+            checked: checked("repair-location-bedroom", "Cupboards")
+          },
+          {
               value: "lighting-or-sockets",
-              text: "Lighting or sockets",
+              text: "Electricals, including lights and switches",
               id: "repair-location-bedroom-cupboards",
               checked: checked("repair-location-bedroom", "Cupboards")
             },
             {
               value: "walls",
-              text: "Walls, floor or ceiling",
+              text: "Walls, floor or ceiling, excluding damp",
               id: "repair-location-bedroom-worktop",
               checked: checked("repair-location-bedroom", "Worktop")
             },
@@ -48,13 +54,7 @@
             },
             {
               value: "damp",
-              text: "Damp",
-              id: "repair-location-bedroom-door",
-              checked: checked("repair-location-bedroom", "Something else")
-            },
-            {
-              value: "radiator",
-              text: "Radiator",
+              text: "Damp or mould",
               id: "repair-location-bedroom-door",
               checked: checked("repair-location-bedroom", "Something else")
             }
