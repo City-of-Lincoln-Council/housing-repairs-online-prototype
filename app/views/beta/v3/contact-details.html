@@ -97,21 +97,6 @@ $(document).ready(function() { console.log({data}) });
               </h1>
             </legend>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("how-contacted","email")}}>
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
-                  Email
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-email">
-                    Email address
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="email-address" type="email" spellcheck="false" value="{{ data['contact-by-email']}}">
-                </div>
-
-              </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("how-contacted","text")}}>
@@ -125,6 +110,22 @@ $(document).ready(function() { console.log({data}) });
                     Phone number
                   </label>
                   <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" value="{{ data['contact-by-text']}}">
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("how-contacted","email")}}>
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="email-address" type="email" spellcheck="false" value="{{ data['contact-by-email']}}">
                 </div>
 
               </div>
