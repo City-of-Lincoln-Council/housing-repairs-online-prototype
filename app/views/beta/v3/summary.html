@@ -139,7 +139,21 @@
           </dt>
           <dd class="govuk-summary-list__value">
 
-            <p>{{data['contact-by-text']}}</p>
+            <p>{{data['contact-detail']}}
+
+              <!--<script type="text/javascript">
+
+                var howContacted = ({ checked("contact-by-phone")})
+
+                if (howContacted = true)
+                  print({data['contact-by-text']});
+                else {
+                  print({data['contact-by-email']})
+                }
+
+              </script>-->
+
+            </p>
 
             </dd>
           <dd class="govuk-summary-list__actions">
@@ -151,8 +165,6 @@
         </div>
 
       </dl>
-
-
 
          <form action="/beta/v3/confirmation" method="post" novalidate>
 

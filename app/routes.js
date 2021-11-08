@@ -1122,6 +1122,9 @@ router.post('/beta/v3/repair-outside', function (req, res) {
             case "gates-pathways":
             res.redirect('/beta/v3/outside-gates-pathways');
             break;
+            case "locks-fittings":
+            res.redirect('/beta/v3/repair-description');
+            break;
             case "roof":
             res.redirect('/beta/v3/outside-roof');
             break;
