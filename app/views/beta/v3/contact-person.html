@@ -26,20 +26,9 @@ $(document).ready(function() { console.log({data}) });
 
             <h4 class="govuk-heading-s">Repair details</h4>
 
-            <p>Problem: Somewhere else</p>
-                  <p><a href="/beta/v3/repair-location">
-                  Change
-            <span class="govuk-visually-hidden"> location</span>
-            </a></p>
-            <hr>
-            <p>Communal area: No</p>
-                  <p><a href="/beta/v3/repair-location">
-                  Change
-            <span class="govuk-visually-hidden"> location</span>
-            </a></p>
             <hr>
 
-            <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+            <p>{{ data['address'] }}<br>{{ data['address-postcode'] }}</p>
             <p><a href="postcode">
                   Change
             <span class="govuk-visually-hidden"> address</span>
@@ -85,7 +74,7 @@ $(document).ready(function() { console.log({data}) });
             <div id="account-number-hint" class="govuk-hint">
               Please enter a UK landline or mobile phone number
             </div>
-            <input class="govuk-input" id="appointment-contact-number" name="appointment-contact-number" type="text">
+            <input class="govuk-input" id="appointment-contact-number" name="appointment-contact-number" type="text"value="{{ data['appointment-contact-number']}}">
           </fieldset>
         </div>
 

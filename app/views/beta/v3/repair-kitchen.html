@@ -23,23 +23,22 @@
 
           <h4 class="govuk-heading-s">Repair details</h4>
 
-          <p>Problem: Somewhere else</p>
-                <p><a href="/beta/v3/repair-location">
-                Change
-          <span class="govuk-visually-hidden"> location</span>
-          </a></p>
-          <hr>
-          <p>Communal area: No</p>
-                <p><a href="/beta/v3/repair-location">
-                Change
-          <span class="govuk-visually-hidden"> location</span>
-          </a></p>
           <hr>
 
-          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+          <p>Address: {{ data['address'] }}</p>
+
           <p><a href="postcode">
                 Change
           <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+
+          <p>Postcode: {{ data['address-postcode'] }}</p>
+
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> postcode</span>
           </a></p>
           <hr>
           <p>Location: {{ data["repair-location"] }}</p>
