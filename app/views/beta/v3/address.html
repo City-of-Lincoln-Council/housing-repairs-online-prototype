@@ -22,18 +22,9 @@
 
           <h4 class="govuk-heading-s">Repair details</h4>
 
-          <p>Problem: Somewhere else</p>
-                <p><a href="/beta/v3/repair-location">
-                Change
-          <span class="govuk-visually-hidden"> location</span>
-          </a></p>
           <hr>
-          <p>Communal area: No</p>
-                <p><a href="/beta/v3/repair-location">
-                Change
-          <span class="govuk-visually-hidden"> location</span>
-          </a></p>
-          <p>{{ data['addresses'] }}<br>{{ data['address-postcode'] }}</p>
+
+          <p>Postcode: {{ data['address-postcode'] }}</p>
 
           <p><a href="postcode">
                 Change
@@ -56,7 +47,7 @@
 
 {{ govukSelect({
   id: "addresses",
-  name: "addresses",
+  name: "address",
   label: {
     text: "Select an address"
   },

@@ -772,7 +772,7 @@ router.post('/beta/v3/priority-list', function (req, res) {
             case "carbon-monoxide":
             res.redirect('/beta/v3/emergency');
             break;
-            case "something-else":
+            case "non-emergency":
             res.redirect('/beta/v3/communal-or-private-property');
             break;
     };
@@ -808,7 +808,7 @@ router.post('/beta/v3/priority-list-error', function (req, res) {
             case "carbon-monoxide":
             res.redirect('/beta/v3/emergency');
             break;
-            case "something-else":
+            case "non-emergency":
             res.redirect('/beta/v3/communal-or-private-property');
             break;
     };

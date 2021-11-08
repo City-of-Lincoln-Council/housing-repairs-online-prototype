@@ -47,21 +47,20 @@
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
+          </a><p>
 
           <hr>
-          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+          <p>Relates to: {{ data["repair-area"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
-
+          </a><p>
           <hr>
-          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+          <p>Problem: {{ data["repair-type-cupboards"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
+          </a><p>
 
         </div>
       </details>
@@ -87,7 +86,7 @@
             <span id="more-detail-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter more detail
             </span>
-            <textarea style="border:2px solid #d4351c" class="govuk-textarea govuk-js-character-count govuk-textarea--error" id="with-hint" repair-description-error" rows="5" aria-describedby="with-hint-hint more-detail-error" name="repair-description-error"></textarea>
+            <textarea style="border:2px solid #d4351c" class="govuk-textarea govuk-js-character-count govuk-textarea--error" id="with-hint" repair-description-error" rows="5" aria-describedby="with-hint-hint more-detail-error" name="repair-description"></textarea>
           </div>
 
           <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
