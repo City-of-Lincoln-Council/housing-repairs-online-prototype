@@ -22,7 +22,7 @@
       name: "repair-damp-or-mould",
       fieldset: {
         legend: {
-          text: "Could this be caused by a leak?",
+          text: "What is the problem?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -30,13 +30,13 @@
       items: [
         {
           value: "yes",
-          text: "Yes",
+          text: "Damp or mould caused by a leak",
           id: "repair-location-damp-or-mould-yes",
           checked: checked("repair-damp-or-mould", "damp-or-mould")
         },
         {
           value: "no",
-          text: "No",
+          text: "Damp or mould caused by something else",
           id: "repair-damp-or-mould-no",
           checked: checked("repair-location-kitchen", "Worktop")
         }
