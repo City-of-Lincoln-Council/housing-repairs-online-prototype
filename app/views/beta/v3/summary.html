@@ -139,19 +139,20 @@
           </dt>
           <dd class="govuk-summary-list__value">
 
-            <p>{{data['contact-detail']}}
+            <p>
 
-              <!--<script type="text/javascript">
+            {% if data['how-contacted'] == 'email' %}
 
-                var howContacted = ({ checked("contact-by-phone")})
+            {{data['email-address']}}
 
-                if (howContacted = true)
-                  print({data['contact-by-text']});
-                else {
-                  print({data['contact-by-email']})
-                }
 
-              </script>-->
+            {% else %}
+
+
+
+             {{data['contact-by-text']}}
+
+           {% endif %}
 
             </p>
 

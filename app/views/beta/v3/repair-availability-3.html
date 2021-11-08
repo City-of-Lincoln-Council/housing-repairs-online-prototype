@@ -47,35 +47,39 @@
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
+          </a><p>
 
           <hr>
-          <p>Location: {{ data["repair-location-kitchen"] }}</p>
+          <p>Relates to: {{ data["repair-area"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
-
+          </a><p>
           <hr>
-          <p>Location: {{ data["repair-type-cupboards"] }}</p>
+          <p>Problem: {{ data["repair-type-cupboards"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
+          </a><p>
 
           <hr>
-          <p>Other-details: {{ data["more-detail"] }}</p>
+          <p>Description: {{ data["repair-description"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
-
+          </a><p>
           <hr>
-          <p>Access or disabilities restrictions: {{ data["access-restrictions"] }}</p>
+          <p>Appointment contact number: {{ data["appointment-contact-number"] }}</p>
                 <p><a href="/beta/v3/repair-location">
                 Change
           <span class="govuk-visually-hidden"> location</span>
-          </a></p>
+          </a><p>
+            <hr>
+            <p>Confirmation contact details: {% if data['how-contacted'] == 'email'%}{{data['email-address']}}{% else %}{{data['contact-by-text']}}{% endif %}</p>
+                  <p><a href="/beta/v3/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
 
         </div>
       </details>
