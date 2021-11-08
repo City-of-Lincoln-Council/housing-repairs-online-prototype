@@ -952,7 +952,7 @@ router.post('/beta/v3/repair-bathroom-window', function (req, res) {
 
 router.post("/beta/v3/repair-damp-or-mould", function(req, res) {
   if (req.session.data["repair-damp-or-mould"] === "yes") {
-    res.redirect("/beta/v3/not-eligible");
+    res.redirect("/beta/v3/emergency");
   } else {
     res.redirect("/beta/v3/repair-description")
   }
