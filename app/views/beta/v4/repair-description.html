@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair description
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<script>
+  function deleteFile(i){
+	$( "#filediv"+i ).remove();
+  }
+
+  function clearFiles(id){
+	if ($('#'+id).not(':checked').length) {
+		$("#"+id+"-file").empty();
+	}
+  }
+
+ function uploadPayslips(id,spanid){
+	var fi = document.getElementById(id);
+	// VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+    if (fi.files.length > 0) {
+        // THE TOTAL FILE COUNT.
+        // RUN A LOOP TO CHECK EACH SELECTED FILE.
+        for (var i = 0; i <= fi.files.length - 1; i++) {
+            var fname = fi.files.item(i).name;      // THE NAME OF THE FILE.
+			var fsizename = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+			var fsize = Math.round((fsizename / 1024))+' KB';
+			// SHOW THE EXTRACTED DETAILS OF THE FILE.
+            document.getElementById(spanid).innerHTML =
+                document.getElementById(spanid).innerHTML + '<div class="govuk-summary-list__row" id="filediv'+fsizename+(i+1)+'"><dt class="govuk-summary-list__key">File '+(i+1)+'</dt> <dd class="govuk-summary-list__value"> <a download="" href="/">'+fname+'</a>,'+fsize+'</dd><dd class="govuk-summary-list__actions">  <a class="govuk-link"  onclick="deleteFile('+fsizename+(i+1)+')">	Delete<span class="govuk-visually-hidden"> file 1</span>	  </a>		</dd>	</div>';
+			}
+			$('#'+id).val('');
+	    }
+        else {
+            alert('Please select a file.')
+        }
+}
+
+</script>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your answers
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <h4 class="govuk-heading-s">Repair details</h4>
+
+          <hr>
+
+          <p>Address: {{ data['address'] }}</p>
+
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> address</span>
+          </a></p>
+
+          <hr>
+
+          <p>Postcode: {{ data['address-postcode'] }}</p>
+
+          <p><a href="postcode">
+                Change
+          <span class="govuk-visually-hidden"> postcode</span>
+          </a></p>
+
+          <hr>
+          <p>Location: {{ data["repair-location"] }}</p>
+                <p><a href="/beta/v4/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a><p>
+
+          <hr>
+          <p>Relates to: {{ data["repair-area"] }}</p>
+                <p><a href="/beta/v4/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a><p>
+          <hr>
+          <p>Problem: {{ data["repair-type-cupboards"] }}</p>
+                <p><a href="/beta/v4/repair-location">
+                Change
+          <span class="govuk-visually-hidden"> location</span>
+          </a><p>
+
+        </div>
+      </details>
+
+      <h1 class="govuk-heading-xl">Describe your problem in more detail</h1>
+
+      <p>Please describe:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the size and location of the problem</li>
+        <li>the source of the problem</li>
+        <li>how long you have been experiencing the problem</li>
+        <li>how many items are damaged, for example 3 floor tiles</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        Please report <strong>only one problem</strong> at a time. You will have a chance to report another repair after this one.
+      </div>
+
+      <form class="form" method="post">
+
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="255">
+          <div class="govuk-form-group">
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="repair-description" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 255 characters
+          </div>
+
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-heading-m" for="file-upload-1">
+            Upload a photo (maximum of 3)
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

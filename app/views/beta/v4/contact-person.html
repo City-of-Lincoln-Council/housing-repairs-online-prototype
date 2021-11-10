@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact details
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+$(document).ready(function() { console.log({data}) });
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/beta/v4/contact-details" method="post">
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Your answers
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <h4 class="govuk-heading-s">Repair details</h4>
+
+            <hr>
+
+            <p>{{ data['address'] }}<br>{{ data['address-postcode'] }}</p>
+            <p><a href="postcode">
+                  Change
+            <span class="govuk-visually-hidden"> address</span>
+            </a></p>
+
+            <hr>
+            <p>Location: {{ data["repair-location"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+
+            <hr>
+            <p>Relates to: {{ data["repair-area"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+            <hr>
+            <p>Problem: {{ data["repair-type-cupboards"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+
+            <hr>
+            <p>Description: {{ data["repair-description"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+
+          </div>
+        </details>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                What number should we call, if we need to get in touch?
+              </h1>
+            </legend>
+            <div id="account-number-hint" class="govuk-hint">
+              Please enter a UK landline or mobile phone number
+            </div>
+            <input class="govuk-input" id="appointment-contact-number" name="appointment-contact-number" type="text"value="{{ data['appointment-contact-number']}}">
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Provide contact details</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+          What is the problem?
+        </label>
+      </h1>
+
+      <form class="form" method="get" action="repair-description">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="event-name">
+              Type of fencing
+            </label>
+            <div id="more-detail-hint" class="govuk-hint">
+              E.g. chain link or fence panels
+            </div>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="event-name">
+            Size of the fence
+          </label>
+          <div id="more-detail-hint" class="govuk-hint">
+            E.g. 3 foot panels or 5 foot panels with kickers
+          </div>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label" for="event-name">
+              Number of fence panels
+            </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="event-name" name="event-name" type="text">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}

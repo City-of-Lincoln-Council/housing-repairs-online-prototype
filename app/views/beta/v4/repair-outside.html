@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-location-outside",
+          name: "repair-area",
+          fieldset: {
+            legend: {
+              text: "What does your problem relate to?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "doors",
+              text: "Door, including shed and outhouse",
+              id: "repair-location-outside-cupboards",
+              checked: checked("repair-location-outside", "Cupboards")
+            },
+            {
+              value: "outdoor-security-lights",
+              text: "Outdoor security lights",
+              id: "repair-location-outside-worktop",
+              checked: checked("repair-location-outside", "Worktop")
+            },
+            {
+              value: "garage",
+              text: "Garage, including roof and door",
+              id: "repair-location-outside-window",
+              checked: checked("repair-location-outside", "Window")
+            },
+            {
+              value: "gates-pathways",
+              text: "Gates and pathways",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "locks-fittings",
+              text: "Communal gate lock",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            },
+            {
+              value: "roof",
+              text: "Roof, including insulation and shed roof",
+              id: "repair-location-outside-door",
+              checked: checked("repair-location-outside", "Something else")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+</div>
+
+</div>
+
+{% endblock %}

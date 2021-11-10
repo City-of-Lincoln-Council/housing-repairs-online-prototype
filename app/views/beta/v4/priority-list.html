@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair emergencies
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="repair-emergency" name="repair-emergency">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Are you having one of the emergencies below?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live" name="repair-emergency" type="radio" value="gas">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  I can smell gas in or near the property
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="repair-emergency" type="radio" value="heating">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  I have no heating in the property
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-3" name="repair-emergency" type="radio" value="water">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                  I have no water in the property
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="repair-emergency" type="radio" value="electricity">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                  I have no electricity in the property
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="repair-emergency" type="radio" value="leak">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+                  I have water leaking on to electrics
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="repair-emergency" type="radio" value="security">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                  I can't secure my property
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="repair-emergency" type="radio" value="wiring">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
+                  I have exposed wiring or sockets
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-4" name="repair-emergency" type="radio" value="carbon-monoxide">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-8">
+                  My carbon monoxide or smoke alarm is beeping
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-6" name="repair-emergency" type="radio" value="non-emergency">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-9">
+                  No, I want to request a non-emergency repair
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

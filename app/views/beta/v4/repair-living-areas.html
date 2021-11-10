@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "repair-location-living-areas",
+          name: "repair-area",
+          fieldset: {
+            legend: {
+              text: "What does your problem relate to?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "door",
+              text: "Door",
+              id: "repair-location-living-areas-door",
+              checked: checked("repair-location-living-areas", "Something else")
+            },
+
+            {
+              value: "electrical",
+              text: "Electricals, including lights and switches",
+              id: "repair-location-living-areas-electrical",
+              checked: checked("repair-location-living-areas", "Electrical")
+            },
+                    {
+              value: "walls",
+              text: "Walls, floor or ceiling, excluding damp",
+              id: "repair-location-living-areas-walls",
+              checked: checked("repair-location-living-areas", "Walls")
+            },
+                    {
+              value: "window",
+              text: "Window",
+              id: "repair-location-living-areas-window",
+              checked: checked("repair-location-living-areas", "Window")
+            },
+            {
+              value: "damp-or-mould",
+              text: "Damp or mould",
+              id: "repair-location-living-areas-damp",
+              checked: checked("repair-location-living-areas", "Damp or mould")
+            },
+            {
+              value: "stairs",
+              text: "Stairs (including handrail)",
+              id: "repair-location-living-areas-door",
+              checked: checked("repair-location-living-areas", "Something else")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

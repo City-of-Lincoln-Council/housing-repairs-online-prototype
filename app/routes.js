@@ -1297,7 +1297,7 @@ router.post('/beta/v4/priority-list', function (req, res) {
     var repairEmergency = req.session.data['repair-emergency'];
     switch (repairEmergency) {
         case undefined:
-            res.redirect('/beta/v4/emergency');
+            res.redirect('/beta/v4/priority-list-error');
             break;
             case "gas":
             res.redirect('/beta/v4/smell-gas');
@@ -1323,7 +1323,43 @@ router.post('/beta/v4/priority-list', function (req, res) {
             case "carbon-monoxide":
             res.redirect('/beta/v4/emergency');
             break;
-            case "something-else":
+            case "non-emergency":
+            res.redirect('/beta/v4/communal-or-private-property');
+            break;
+    };
+});
+
+router.post('/beta/v4/priority-list-error', function (req, res) {
+    var repairEmergency = req.session.data['repair-emergency'];
+    switch (repairEmergency) {
+        case undefined:
+            res.redirect('/beta/v4/priority-list-error');
+            break;
+            case "gas":
+            res.redirect('/beta/v4/smell-gas');
+            break;
+            case "heating":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "water":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "electricity":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "leak":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "security":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "wiring":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "carbon-monoxide":
+            res.redirect('/beta/v4/emergency');
+            break;
+            case "non-emergency":
             res.redirect('/beta/v4/communal-or-private-property');
             break;
     };
@@ -1332,6 +1368,14 @@ router.post('/beta/v4/priority-list', function (req, res) {
 router.post("/beta/v4/communal-or-private-property", function(req, res) {
   if (req.session.data["communal"] === "yes") {
     res.redirect("/beta/v4/not-eligible-communal-repairs");
+  } else {
+    res.redirect("/beta/v4/postcode")
+  }
+});
+
+router.post("/beta/v4/resident-type", function(req, res) {
+  if (req.session.data["resident"] === "yes") {
+    res.redirect("/beta/v4/not-eligible");
   } else {
     res.redirect("/beta/v4/postcode")
   }
@@ -1459,7 +1503,7 @@ router.post('/beta/v4/repair-bathroom-window', function (req, res) {
 
 router.post("/beta/v4/repair-damp-or-mould", function(req, res) {
   if (req.session.data["repair-damp-or-mould"] === "yes") {
-    res.redirect("/beta/v4/not-eligible");
+    res.redirect("/beta/v4/emergency");
   } else {
     res.redirect("/beta/v4/repair-description")
   }
@@ -1629,35 +1673,11 @@ router.post('/beta/v4/repair-outside', function (req, res) {
             case "gates-pathways":
             res.redirect('/beta/v4/outside-gates-pathways');
             break;
-            case "gutters-drains":
-            res.redirect('/beta/v4/outside-gutters-drains');
-            break;
             case "locks-fittings":
             res.redirect('/beta/v4/repair-description');
             break;
             case "roof":
             res.redirect('/beta/v4/outside-roof');
-            break;
-            case "water":
-            res.redirect('/beta/v4/outside-water');
-            break;
-            case "fencing":
-            res.redirect('/beta/v4/outside-fencing');
-            break;
-            case "washing-lines":
-            res.redirect('/beta/v4/repair-description');
-            break;
-            case "graffiti":
-            res.redirect('/beta/v4/outside-graffiti');
-            break;
-            case "fly-tipping":
-            res.redirect('/beta/v4/outside-fly-tipping');
-            break;
-            case "brickwork":
-            res.redirect('/beta/v4/repair-description');
-            break;
-            case "manhole-covers":
-            res.redirect('/beta/v4/not-eligible');
             break;
     };
 });
@@ -1804,6 +1824,22 @@ router.post('/beta/v4/repair-door-living-areas', function (req, res) {
             res.redirect('/beta/v4/not-eligible-non-emergency');
             break;
     };
+});
+
+router.post("/beta/v4/repair-description", function(req, res) {
+  if (req.session.data["repair-description"] === "") {
+    res.redirect("/beta/v4/repair-description-error");
+  } else {
+    res.redirect("/beta/v4/contact-person")
+  }
+});
+
+router.post("/beta/v4/repair-description-error", function(req, res) {
+  if (req.session.data["repair-description-error"] === "") {
+    res.redirect("/beta/v4/repair-description-error");
+  } else {
+    res.redirect("/beta/v4/contact-person")
+  }
 });
 
 module.exports = router

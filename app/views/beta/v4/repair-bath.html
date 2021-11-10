@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repair type
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="get" action="/beta/v4/repair-description">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "repair-type-bath",
+      name: "repair-type-bath",
+      fieldset: {
+        legend: {
+          text: "What is the problem?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      items: [
+        {
+          value: "bath-taps",
+          text: "Bath taps",
+          id: "repair-type-e-f",
+          checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
+        },
+        {
+          value: "seal",
+          text: "Seal around bath",
+          id: "repair-type-e-f",
+          checked: checked("repair-location-hanging-cupboards-door", "hanging cupboards door")
+        },
+        {
+          value: "bath-panel",
+          text: "Bath panel",
+          id: "repair-type-missing-cupboards-door",
+          checked: checked("repair-location-kitchen-missing-cupboards-door", "missing cupboards door")
+        },
+        {
+          value: "blockage",
+          text: "Blockage",
+          id: "repair-type-something-else",
+          checked: checked("repair-type-cupboard-something-else", "cupboard something else")
+        }
+      ]
+    }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

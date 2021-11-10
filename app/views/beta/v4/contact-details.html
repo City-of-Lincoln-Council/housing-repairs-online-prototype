@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact details
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+$(document).ready(function() { console.log({data}) });
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/beta/v4/repair-availability-1" method="post">
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Your answers
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+            <h4 class="govuk-heading-s">Repair details</h4>
+
+            <hr>
+
+            <p>{{ data['address'] }}<br>{{ data['address-postcode'] }}</p>
+            <p><a href="postcode">
+                  Change
+            <span class="govuk-visually-hidden"> address</span>
+            </a></p>
+
+            <hr>
+            <p>Location: {{ data["repair-location"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+
+            <hr>
+            <p>Relates to: {{ data["repair-area"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+            <hr>
+            <p>Problem: {{ data["repair-type-cupboards"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+
+            <hr>
+            <p>Description: {{ data["repair-description"] }}</p>
+                  <p><a href="/beta/v4/repair-location">
+                  Change
+            <span class="govuk-visually-hidden"> location</span>
+            </a><p>
+              <hr>
+              <p>Appointment contact number: {{ data["appointment-contact-number"] }}</p>
+                    <p><a href="/beta/v4/repair-location">
+                    Change
+              <span class="govuk-visually-hidden"> location</span>
+              </a><p>
+
+          </div>
+        </details>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                How should we confirm the appointment?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-by-phone" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3" {{ checked("how-contacted","contact-by-text")}}>
+                <label class="govuk-label govuk-radios__label" for="contact-by-phone">
+                  Text message (recommended)
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-hint" for="contact-by-text">
+                    Please enter a UK mobile (preferred) or landline phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" value="{{ data['contact-by-text']}}">
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="email-address" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional" {{ checked("how-contacted","email-address")}}>
+                <label class="govuk-label govuk-radios__label" for="email-address">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                <div class="govuk-form-group">
+                  <label class="govuk-hint" for="email-address">
+                    Please enter your email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="email-address" name="email-address" type="email" spellcheck="false" value="{{ data['email-address']}}">
+                </div>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Select appointment</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
