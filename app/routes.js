@@ -923,9 +923,6 @@ router.post('/beta/v3/repair-bathroom', function (req, res) {
             case "window":
             res.redirect('/beta/v3/repair-bathroom-window');
             break;
-            case "something-else":
-            res.redirect('/beta/v3/repair-description');
-            break;
     };
 });
 
@@ -1473,9 +1470,6 @@ router.post('/beta/v4/repair-bathroom', function (req, res) {
             break;
             case "window":
             res.redirect('/beta/v4/repair-bathroom-window');
-            break;
-            case "something-else":
-            res.redirect('/beta/v4/repair-description');
             break;
     };
 });
