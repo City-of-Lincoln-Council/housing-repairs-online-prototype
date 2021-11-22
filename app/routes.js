@@ -1836,4 +1836,19 @@ router.post("/beta/v4/repair-description-error", function(req, res) {
   }
 });
 
+router.post('/beta/v4/cancel-booking', function (req, res) {
+    var cancel = req.session.data['cancel'];
+    switch (cancel) {
+        case undefined:
+            res.redirect('/beta/v4/view-booking');
+            break;
+            case "yes":
+            res.redirect('/beta/v4/booking-cancelled');
+            break;
+            case "no":
+            res.redirect('/beta/v4/view-booking');
+            break;
+    };
+});
+
 module.exports = router

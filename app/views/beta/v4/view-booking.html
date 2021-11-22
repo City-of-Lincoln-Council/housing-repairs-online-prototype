@@ -16,6 +16,8 @@
         Request summary
       </h1>
 
+      <p><a href="/beta/v4/cancel-booking" class="govuk-button govuk-button--secondary">Cancel booking</a></p>
+
  <h2 class="govuk-heading-m">Personal details</h2>
 
  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -56,7 +58,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Where is the problem?
+            Location
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['repair-location']}}
@@ -71,7 +73,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            What is the problem?
+            Category
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['repair-area']}}
@@ -167,15 +169,12 @@
 
       </dl>
 
-         <form action="/beta/v4/confirmation" method="post" novalidate>
 
-        <input type="hidden" name="answers-checked" value="true">
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Confirm and send the request
-        </button>
+        <a href="confirmation" class="govuk-button" data-module="govuk-button">
+          Close
+        </a>
 
-      </form>
     </div>
 
 

@@ -12,7 +12,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+
       <form class="form" method="post">
 
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -22,7 +22,7 @@
   name: "communal",
   fieldset: {
     legend: {
-      text: "Is the issue in a communal area?",
+      text: "Is the problem in a public area?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -43,26 +43,26 @@
   ]
 }) }}
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Which areas are communal?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">Communal repairs are usually in areas that people share.</p>
-    <p class="govuk-body"> They can include:</p>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What is a public area?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">Public repairs are usually in areas that people share.</p>
+      <p class="govuk-body">For example:</p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>repairs to door entry systems</li>
-      <li>lock repairs to communal doors</li>
-      <li>lighting repairs to shared areas</li>
-      <li>glazing repairs to shared doors or stairway windows</li>
-      <li>roof and gutter repairs</li>
-      <li>structure and external walls to your block</li>
-    </ul>
-  </div>
-</details>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>repairs to door entry systems</li>
+        <li>lock repairs to public doors</li>
+        <li>lighting repairs to shared areas</li>
+        <li>glazing repairs to shared doors or stairway windows</li>
+        <li>roof and gutter repairs</li>
+        <li>structure and external walls to your block</li>
+      </ul>
+    </div>
+  </details>
 
 
         <button class="govuk-button" data-module="govuk-button">Provide your postcode</button>

@@ -14,19 +14,17 @@ $(document).ready(function() { console.log({data}) });
 </script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/beta/v4/contact-details" method="post">
-
-        
+      <form class="form" action="/beta/v4/temporary-password" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                What number should we call, if we need to get in touch?
+                Please provide your phone number?
               </h1>
             </legend>
             <div id="account-number-hint" class="govuk-hint">
-              Please enter a UK landline or mobile phone number
+              We will send you a temporary password
             </div>
             <input class="govuk-input" id="appointment-contact-number" name="appointment-contact-number" type="text"value="{{ data['appointment-contact-number']}}">
           </fieldset>

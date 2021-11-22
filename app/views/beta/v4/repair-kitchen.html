@@ -13,43 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Your answers
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-
-          <h4 class="govuk-heading-s">Repair details</h4>
-
-          <hr>
-
-          <p>Address: {{ data['address'] }}</p>
-
-          <p><a href="postcode">
-                Change
-          <span class="govuk-visually-hidden"> address</span>
-          </a></p>
-
-          <hr>
-
-          <p>Postcode: {{ data['address-postcode'] }}</p>
-
-          <p><a href="postcode">
-                Change
-          <span class="govuk-visually-hidden"> postcode</span>
-          </a></p>
-          <hr>
-          <p>Location: {{ data["repair-location"] }}</p>
-                <p><a href="/beta/v4/repair-location">
-                Change
-          <span class="govuk-visually-hidden"> location</span>
-          </a><p>
-
-        </div>
-      </details>
-
       <form class="form" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -59,7 +22,7 @@
       name: "repair-area",
       fieldset: {
         legend: {
-          text: "What does your problem relate to?",
+          text: "What is the problem?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
