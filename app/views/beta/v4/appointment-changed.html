@@ -10,13 +10,12 @@
     <div class="govuk-grid-column-two-thirds">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Your repair has been cancelled
+        Your appointment slot has been changed to *new appointment date & time*
       </h1>
     </legend>
         <p>We have sent a confirmation to 
-        {% if data['how-contacted'] == 'email'%}{{data['email-address']}}{% else %}{{data['contact-by-text']}}{% endif %}. <p>You can request another repair by clicking on the link below.</p>
-        <p><a href="/beta/v4">Request another repair</a></p>
-
+        {% if data['how-contacted'] == 'email'%}{{data['email-address']}}{% else %}{{data['contact-by-text']}}{% endif %}.<p> 
+      
     </div>
 
 
