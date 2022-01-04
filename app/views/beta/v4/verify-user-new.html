@@ -20,9 +20,15 @@ $(document).ready(function() { console.log({data}) });
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                We need your repair number and the postcode of the property where the repair is requested
+                Please provide the repair number and postcode?
               </h1>
             </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="event-name">
+                Repair Number, e.g. LNC10293
+              </label>
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+            </div>
             <div class="govuk-form-group">
               <label class="govuk-label" for="event-name">
                 Repair Number, e.g. LNC10293
