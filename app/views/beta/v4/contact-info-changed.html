@@ -10,10 +10,10 @@
     <div class="govuk-grid-column-two-thirds">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Your contact number has been changed
+        The contact number has been changed
       </h1>
     </legend>
-      <p>Your contact number for the repair appointment is *new contact number*<p>  
+      <p>The contact number for the repair appointment is *new contact number*<p>  
       <p>We have sent a confirmation to 
         {% if data['how-contacted'] == 'email'%}{{data['email-address']}}{% else %}{{data['contact-by-text']}}{% endif %}. 
 
